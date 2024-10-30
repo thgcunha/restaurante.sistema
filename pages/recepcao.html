@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+        defer></script>
+    
+    <script src="/js/mesas.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/recepcao.css">   
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Recepção</title>
+    <link rel="icon" type="image/x-icon" href="/img/recepcionista.png">
+</head>
+
+<body>
+    <header id="cab2">
+        <h1>
+            La Belezza
+            <br>
+            <hr id="hr1">
+            Recepção
+        </h1>
+    </header>
+    <div class="container-fluid">
+        <main class="container">
+            <section class="row area">
+                <article class="col">
+                    <button id="mesa1" class="mesas" onclick="mesa(1)">1</button>
+                </article>
+                <article class="col">
+                    <button id="mesa2" class="mesas" onclick="mesa(2)">2</button>
+                </article>
+                <article class="col">
+                    <button id="mesa3" class="mesas" onclick="mesa(3)">3</button>
+                </article>
+                <article class="col">
+                    <button id="mesa4" class="mesas" onclick="mesa(4)">4</button>
+                </article>
+                <article class="col">
+                    <button id="mesa5" class="mesas" onclick="mesa(5)">5</button>
+                </article>
+            </section>
+            <section class="row area">
+                <article class="col">
+                    <button id="mesa6" class="mesas" onclick="mesa(6)">6</button>
+                </article>
+                <article class="col">
+                    <button id="mesa7" class="mesas" onclick="mesa(7)">7</button>
+                </article>
+                <article class="col">
+                    <button id="mesa8" class="mesas" onclick="mesa(8)">8</button>
+                </article>
+                <article class="col">
+                    <button id="mesa9" class="mesas" onclick="mesa(9)">9</button>
+                </article>
+                <article class="col">
+                    <button id="mesa10" class="mesas" onclick="mesa(10)">10</button>
+                </article>
+            </section>
+            <section class="row area">
+                <article class="col">
+                    <button id="mesa11" class="mesas" onclick="mesa(11)">11</button>
+                </article>
+                <article class="col">
+                    <button id="mesa12" class="mesas" onclick="mesa(12)">12</button>
+                </article>
+                <article class="col">
+                    <button id="mesa13" class="mesas" onclick="mesa(13)">13</button>
+                </article>
+                <article class="col">
+                    <button id="mesa14" class="mesas" onclick="mesa(14)">14</button>
+                </article>
+                <article class="col">
+                    <button id="mesa15" class="mesas" onclick="mesa(15)">15</button>
+                </article>
+            </section>
+            <section class="row area">
+                <article class="col">
+                    <button id="mesa16" class="mesas" onclick="mesa(16)">16</button>
+                </article>
+                <article class="col">
+                    <button id="mesa17" class="mesas" onclick="mesa(17)">17</button>
+                </article>
+                <article class="col">
+                    <button id="mesa18" class="mesas" onclick="mesa(18)">18</button>
+                </article>
+                <article class="col">
+                    <button id="mesa19" class="mesas" onclick="mesa(19)">19</button>
+                </article>
+                <article class="col">
+                    <button id="mesa20" class="mesas" onclick="mesa(20)">20</button>
+                </article>
+            </section>
+            <section class="row area">
+                <article class="col">
+                    <button id="mesa21" class="mesas" onclick="mesa(21)">21</button>
+                </article>
+                <article class="col">
+                    <button id="mesa22" class="mesas" onclick="mesa(22)">22</button>
+                </article>
+                <article class="col">
+                    <button id="mesa23" class="mesas" onclick="mesa(23)">23</button>
+                </article>
+                <article class="col">
+                    <button id="mesa24" class="mesas" onclick="mesa(24)">24</button>
+                </article>
+                <article class="col">
+                    <button id="mesa25" class="mesas" onclick="mesa(25)">25</button>
+                </article>
+            </section>
+
+            </section>
+            <section class="row-liberar">
+                <article class="col">
+                    <button class="liberar" onclick="liberar()">
+                        Liberar Mesa
+                    </button>
+                </article>
+                <article class="col">
+                    <a href="/index.html">
+                        <button class="voltar">
+                            Voltar
+                        </button>
+                    </a>
+                </article>
+            </section>
+            <section id="mesasusadas"></section>
+        </main>
+    </div>
+
+
+</body>
+
+</html>

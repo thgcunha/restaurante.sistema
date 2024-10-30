@@ -1,0 +1,219 @@
+
+/* CSS GERAL */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    background-color: #F8F4E3;
+    /* border: 2px solid black; */
+}
+
+
+body {
+    background-color: #F8F4E3;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+#cab {
+    background-color: #810020;
+    height: 70px;
+    width: 100%;
+}
+
+#cab2 {
+    background-color: #810020;
+    height: 110px;
+    width: 100%;
+    
+}
+
+#hr1 {
+    margin: 0px 400px;
+    border: 2px solid #D4AF37;
+}
+
+h1 {
+    background-color: #810020;
+    color: #D4AF37;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; 
+}
+
+
+
+main {
+    padding: 20px;
+}
+
+.calendario {
+    margin-top: 35px;
+    border-radius: 15px;
+    padding: 20px;
+    /* Adiciona um espaçamento interno para dar mais "respiro" ao conteúdo */
+
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hcalendario {
+    background-color: #810020;
+    border-radius: 9px 9px 0px 0px;
+    height: 50px;
+    text-align: center;
+}
+
+.hcalendario>span {
+    background-color: #810020;
+    color: #D4AF37;
+    margin-top: px;
+    font-size: 30px;
+    font-family: "Lora", serif;
+}
+
+.corpocal>p {
+    display: inline-block;
+    width: 30%;
+    margin: 0;
+
+}
+
+.corpocal {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px 0px 9px 9px;
+}
+
+.apoio {
+    border: 5px solid #810020;
+    border-radius: 15px;
+}
+
+.prf {
+    color: #D4AF37;
+    background-color: #810020;
+    height: 80px;
+    font-size: 25px;
+}
+
+.prf>span {
+    color: #D4AF37;
+    background-color: #810020;
+
+}
+
+/* provisorio */
+
+/* Estilo dos artigos */
+.col-menu {
+    padding: 10px;
+    color: #ffffff;
+    /* Texto branco */
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
+    /* Sombra suave */
+    border: 2px solid #D4AF37;
+    /* Border dourado */
+    background-color: #810020;
+    border-radius: 5px;
+}
+
+
+.op {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 15px;
+    background-color: #810020;
+    color: #D4AF37;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
+}
+
+
+
+.op:hover {
+    transform: scale(1.05);
+    /* Efeito de hover para aumentar levemente */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* Sombra mais intensa ao hover */
+}
+
+#recepcionista {
+    justify-content: flex-end;
+    /* Alinha o conteúdo para a direita */
+}
+
+.btop {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #D4AF37;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.btop:hover {
+    background-color: #D4AF37;
+}
+
+
+
+img {
+
+    border-radius: 50%;
+    /* Raio da borda para formato redondo */
+}
+
+.voltar {
+    
+    background :linear-gradient(135deg, #810020, #a12b3c, #4b0010);
+    color:  #F8F4E3 ; 
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 35px;
+    text-align: center;
+    font-weight: 600;
+}
+
+footer {
+    background: linear-gradient(135deg, #810020 0%, #a12b3c 40%, #4b0010 100%);
+    color: #D4AF37;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 350px;
+    
+}
+
+footer p {
+    margin: 0;
+    font-family:  'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #810020 0%, #a12b3c 40%, #4b0010 100%);
+    
+    
+}

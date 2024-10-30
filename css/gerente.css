@@ -1,0 +1,62 @@
+/* Estilização do título */
+
+#h3gerente {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #D4AF37;
+    
+}
+
+/* Estilização dos botões */
+.btopgerente {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #e0c785 0%, #f0e3b2 50%, #fffdf2 100%);
+    color: #810020; 
+    border: none;
+    padding: 20px; 
+    margin: 15px; 
+    font-family: "Lora", serif;
+    font-size: 18px; /* Aumentei o tamanho da fonte para mais legibilidade */
+    width: 160px;
+    height: 160px;
+    border-radius: 12px; /* Pequeno ajuste para suavizar os cantos */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Aumentei a sombra para mais profundidade */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Adicionada transição para animação suave */
+}
+
+.btopgerente:hover {
+    background: linear-gradient(135deg, #e6cc87 20%, #fffdf2 50%, #f0e3b2 100%);
+    color: #6f001a; /* Cor ligeiramente mais escura no hover */
+    transform: translateY(-5px); /* Animação de elevação ao passar o mouse */
+}
+
+i {
+    font-size: 2em; /* Aumenta o tamanho do ícone */
+    margin-bottom: 10px; /* Espaçamento entre o ícone e o texto */
+    background-color: transparent;
+}
+
+
+/* Alinhamento central das colunas */
+.colgerente {
+    text-align: center;
+    padding: 20px;
+    
+    
+}
+
+/* Container com margem automática para centralizar */
+.container-fluid {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+

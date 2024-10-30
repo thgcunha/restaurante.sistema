@@ -1,0 +1,104 @@
+h2{
+    margin-bottom: 10px;
+    color: #000000;
+    text-align: center;
+    font-size: 27px;
+    letter-spacing: 1px;
+    font-weight: 50;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo da área onde os pedidos são exibidos */
+
+
+.pedidos {
+    background: linear-gradient(135deg, #e0c785 0%, #f0e3b2 50%, #fffdf2 100%);
+    border-radius: 25px;
+    
+    box-shadow: 0 8px 24px rgba(0, 0, 0, -.15);
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    color: #D4AF37; /* Cor do texto */
+    font-size: 18px; /* Tamanho da fonte */
+}
+
+.pedidos h2 {
+    color: #D4AF37; /* Cor do título */
+    font-size: 24px;
+    font-weight: 1000;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: transparent;
+}
+
+.pedidos-area {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 2px solid #ddcc92;
+    color: #D4AF37; /* Cor do texto dentro da área de pedidos */
+}
+
+.btn-primary:hover {
+    background-color: #a12b3c;
+    color: #fff;
+}
+
+p{
+    background-color: transparent;
+}
+
+.finalizar{
+    background: linear-gradient(135deg, #e0c785 0%, #f0e3b2 50%, #fffdf2 100%);
+    color: #967e29;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    height: 35px;
+
+}
+
+.finalizar:hover{
+    box-shadow:5px 5px 5px  #000000 (0, 0, 0.9);
+    color: #b99727;
+    background: linear-gradient(195deg, #e0c785 0%, #f5e5ae 50%, #fffdf2 100%);
+    
+}
+
+h5{
+    font-family:  'Poppins', sans-serif;
+    font-weight:bold ;
+}
+
+
+
+
+
+
+
+
+button.voltar{
+    text-align: center;
+    margin-left: 890px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

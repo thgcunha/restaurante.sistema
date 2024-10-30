@@ -1,0 +1,112 @@
+.mesas {
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+    border: 4px solid #d4af37;
+    background-color: #810020;
+    color:#F8F4E3;
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+.mesas:hover {
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+    border: 2px solid  #d4af37;
+    background-color: #810020;
+    color: #F8F4E3;
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+    transform: scale(1.1);
+    
+}
+
+.disabled {
+    background-color: gray; /* Cor cinza */
+    color: white; /* Texto branco */
+    cursor: not-allowed; /* Muda o cursor para indicar que não está habilitado */
+    pointer-events: none; /* Desabilita todos os eventos do mouse */
+    border: #333;
+}
+.area {
+    margin-top: 15px;
+    
+}
+
+
+
+
+
+    
+
+/* Estilo do parágrafo */
+.paragrafo-mesas {
+    font-family: 'Arial', sans-serif; /* Fonte moderna */
+    font-size: 18px; /* Tamanho da fonte */
+    color: #000000; /* Cor do texto */
+    padding: 40px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: right; /* Alinha o texto à direita */
+    max-width: 400px; /* Limita a largura máxima */
+    background: none; /* Remove o fundo branco */
+    box-shadow: none; /* Remove a sombra */
+    display: flex;
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    align-items: center; /* Alinha os elementos verticalmente */
+    gap: 20px; /* Espaçamento entre os parágrafos */
+    flex-wrap: wrap; /* Permite que os elementos quebrem linha, se necessário */
+    margin-left: 410px;
+    flex: 1; /* Distribui o espaço igualmente entre os parágrafos */
+}
+
+
+
+/* Efeito ao passar o mouse */
+button.lib1:hover {
+    background: linear-gradient(135deg, #a12b3c, #810020, #4b0010); /* Inverte as cores do gradiente */
+    
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
+    filter: brightness(1.1); /* Aumenta a luminosidade ao passar o mouse */
+}
+
+
+button.lib1 {
+    background: linear-gradient(135deg, #810020, #a12b3c, #4b0010); /* Gradiente baseado na cor fornecida */
+    color: #F8F4E3; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    transition: background-color 0.3s ease; /* Transição suave ao mudar a cor */
+    display: inline-block; /* Certifica que o botão está no fluxo inline */
+}
+
+.col{
+    justify-content: center;
+    text-align: center;
+}
+
+button.liberar{
+    background :linear-gradient(135deg, #810020, #a12b3c, #4b0010);
+    color:  #F8F4E3 ; 
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-top: 35px;
+    
+}
+
+.row-liberar {
+    display: flex; /* Usando Flexbox para alinhar os elementos lado a lado */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 20px; /* Espaçamento entre os botões */
+    margin-top: 20px; /* Adiciona margem superior se necessário */
+}
+
+.col {
+    flex: 1; /* Distribui o espaço igualmente entre os botões */
+    text-align: center; /* Centraliza o texto dentro de cada coluna */
+}

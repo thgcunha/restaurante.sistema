@@ -1,0 +1,107 @@
+h4 {
+    font-size: 1.8rem;
+    color: #D4AF37;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h4::after {
+    content: '';
+    width: 380px;
+    height: 3px;
+    background-color: #D4AF37;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#cab2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#hr1 {
+    width: 100px;
+    height: 3px;
+    background-color: #D4AF37;
+    border: none;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #D4AF37;
+}
+
+#payment-form {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+    background-color: #ffffff;
+    color: #D4AF37;
+    border: 1px solid #D4AF37;
+}
+
+.form-control::placeholder {
+    color: #0f0f0f;
+
+}
+
+    /* Para remover setas navegadores Webkit (Chrome, Safari, Edge) */
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        
+}
+
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    
+}
+
+
+
+
+#confirmar{
+    background :linear-gradient(135deg, #810020, #a12b3c, #4b0010);
+    color:  #F8F4E3 ; 
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 35px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+
+.card {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
+    font-size: 18px;
+    color: #D4AF37;
+}
+
+.btn-primary:hover {
+    background-color: #a12b3c;
+    color: #fff;
+}
+
+.voltar{
+    margin-left: 890px;
+}
+
