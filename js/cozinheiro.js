@@ -9,7 +9,7 @@ function carregarPedidos() {
     if (pedidos.length > 0) {
         pedidos.forEach(pedido => adicionarPedidoAoContainer(pedido));
     } else {
-        pedidoContainer.innerHTML = '<p>Nenhum pedido disponível.</p>'; // Mensagem caso não haja pedidos
+        pedidoContainer.innerHTML = '<p class="pedido-disponivel">Nenhum pedido disponível.</p>'; // Mensagem caso não haja pedidos
     }
 }
 

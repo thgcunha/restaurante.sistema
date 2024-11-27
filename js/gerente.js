@@ -55,14 +55,19 @@ document.addEventListener("DOMContentLoaded", carregarDados);
             document.getElementById("valorcomida").value = valor;
             document.getElementById("tipodecomida").value = tipo;
 
+            button.classList.add('btn.editar');
+
             excluirItem(button);
         }
+        
 
-        function excluirItem(button) {
+        function excluirItem(button){
             const row = button.parentElement.parentElement;
             const tipo = row.parentElement.id;
             const nome = row.children[0].innerText;
             const valor = row.children[1].innerText;
+
+            button.classList.add('btn.excluir');
 
             row.remove();
             removerDados(tipo, nome, valor);

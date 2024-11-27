@@ -4,13 +4,15 @@
 * {
     margin: 0px;
     padding: 0px;
-    background-color: #F8F4E3;
+    background-color:  #F2F2F2;
     /* border: 2px solid black; */
 }
 
 
 body {
-    background-color: #F8F4E3;
+    background-color: #F2F2F2;
+
+    
 }
 
 a {
@@ -19,14 +21,14 @@ a {
 
 
 #cab {
-    background-color: #810020;
-    height: 70px;
+    background-color: #336596;
+    height: 100px;
     width: 100%;
 }
 
 #cab2 {
-    background-color: #810020;
-    height: 110px;
+    background-color: #336596;
+    
     width: 100%;
     
 }
@@ -37,15 +39,20 @@ a {
 }
 
 h1 {
-    background-color: #810020;
-    color: #D4AF37;
+    background-color: #336596; /* Azul petróleo escuro, elegante e moderno */
+    color: #ECF0F1; /* Branco suave com um toque de cinza para contraste refinado */
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
-    font-weight: weight;
+    font-weight: 700; /* Peso da fonte para dar ênfase e presença */
     font-style: normal;
     text-align: center;
-    font-family: 'Poppins', sans-serif; 
+    padding: 15px;
+    border-radius: 15px;
+
+
+
 }
+
 
 
 
@@ -66,15 +73,15 @@ main {
 }
 
 .hcalendario {
-    background-color: #810020;
+    background-color: #336596;
     border-radius: 9px 9px 0px 0px;
     height: 50px;
     text-align: center;
 }
 
 .hcalendario>span {
-    background-color: #810020;
-    color: #D4AF37;
+    background-color: #336596;
+    color:  #F2F2F2;
     margin-top: px;
     font-size: 30px;
     font-family: "Lora", serif;
@@ -95,20 +102,20 @@ main {
 }
 
 .apoio {
-    border: 5px solid #810020;
+    border: 5px solid   #195d91;
     border-radius: 15px;
 }
 
 .prf {
-    color: #D4AF37;
-    background-color: #810020;
+    color: #F2F2F2;
+    background-color: #336596;
     height: 80px;
     font-size: 25px;
 }
 
 .prf>span {
-    color: #D4AF37;
-    background-color: #810020;
+    color: #F2F2F2;
+    background-color:   #336596;
 
 }
 
@@ -123,9 +130,9 @@ main {
     transition: transform 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
     /* Sombra suave */
-    border: 2px solid #D4AF37;
+    border: 2px solid #F2F2F2;
     /* Border dourado */
-    background-color: #810020;
+    background-color: #336596;
     border-radius: 5px;
 }
 
@@ -137,8 +144,8 @@ main {
     justify-content: center;
     padding: 20px;
     margin: 15px;
-    background-color: #810020;
-    color: #D4AF37;
+    background-color: #336596;
+    color: #F2F2F2;
     border-radius: 15px;
     transition: transform 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -154,17 +161,14 @@ main {
     /* Sombra mais intensa ao hover */
 }
 
-#recepcionista {
-    justify-content: flex-end;
-    /* Alinha o conteúdo para a direita */
-}
+
 
 .btop {
     height: 80px;
     width: 80px;
     border-radius: 50%;
     margin-bottom: 15px;
-    border: 3px solid #D4AF37;
+    border: 3px solid  #F2F2F2;
     background-color: white;
     display: flex;
     align-items: center;
@@ -186,7 +190,7 @@ img {
 
 .voltar {
     
-    background :linear-gradient(135deg, #810020, #a12b3c, #4b0010);
+    background: linear-gradient(135deg, #1F3B57, #336596);
     color:  #F8F4E3 ; 
     border-radius: 8px;
     padding: 8px 20px;
@@ -196,9 +200,15 @@ img {
     font-weight: 600;
 }
 
+.voltar:hover{
+    background: linear-gradient(135deg, #336596, #719dfc ,#336596);
+
+}
+
 footer {
-    background: linear-gradient(135deg, #810020 0%, #a12b3c 40%, #4b0010 100%);
-    color: #D4AF37;
+    background: linear-gradient(135deg, #1F3B57, #336596);
+
+    color: #F2F2F2;
     text-align: center;
     padding: 20px 0;
     position: relative;
@@ -213,7 +223,8 @@ footer p {
     font-family:  'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 800;
-    background: linear-gradient(135deg, #810020 0%, #a12b3c 40%, #4b0010 100%);
+    background: linear-gradient(135deg, #1F3B57, #336596);
+
     
     
 }

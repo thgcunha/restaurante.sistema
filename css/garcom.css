@@ -10,18 +10,13 @@
 h3 {
     font-size: 24px;
     font-weight: 700;
-    color: #D4AF37; /* Dourado */
+    color: #1F3B57; /* Texto claro */
     text-align: left;
     margin-bottom: 15px;
     font-family: 'Poppins', sans-serif;
 }
 
 /* Estilo da tabela */
-
-
-
-
-
 .table {
     width: 100%;
     margin-bottom: 40px;
@@ -34,8 +29,8 @@ h3 {
 
 /* Estilo do cabeçalho (thead) */
 .table thead {
-    background-color: #D4AF37; /* Fundo dourado no cabeçalho */
-    color: #000; /* Cor preta para o texto do cabeçalho */
+    background-color: #336596; /* Cor de fundo azul */
+    color: #F8F4E3; /* Texto claro */
 }
 
 .table th, .table td {
@@ -44,7 +39,7 @@ h3 {
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Separadores de linhas */
-    color: #333; /* Cor do texto das células */
+    color: #000000; /* Cor do texto das células */
 }
 
 /* Estilo das linhas do corpo da tabela */
@@ -59,8 +54,8 @@ h3 {
 
 /* Estilização dos botões na tabela */
 .table .pedido-btn {
-    background-color: #D4AF37; /* Botão dourado */
-    color: #fff;
+    background-color: #336596; /* Botão azul */
+    color: #F8F4E3; /* Texto claro */
     padding: 8px 12px;
     border-radius: 20px;
     border: none;
@@ -71,12 +66,10 @@ h3 {
 }
 
 .table .pedido-btn:hover {
-    background-color: #b89531; /* Mudança de cor no hover */
+    background-color: #2a5176; /* Cor de hover mais escura */
 }
 
 /* Estilização da área de itens do pedido */
-
-
 #telo .col {
     background-color: transparent; /* Garante que não há fundo por trás do texto */
     font-family: 'Poppins', sans-serif;
@@ -86,8 +79,6 @@ h3 {
     text-align: left;
 }
 
-
-
 #telo .row {
     display: flex;
     justify-content: space-between;
@@ -95,7 +86,7 @@ h3 {
     background-color: #fffdfd; /* Fundo branco para modernidade */
     border-radius: 16px; /* Cantos mais arredondados */
     margin-bottom: 15px;
-    border: 4px solid #810020; 
+    border: 4px solid #336596; /* Borda azul */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9); /* Sombra mais suave */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -103,8 +94,8 @@ h3 {
 #telo .row:hover {
     transform: translateY(-5px); /* Efeito de elevação ao hover */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
-    background-color: #b89531; /* Leve destaque dourado ao passar o mouse */
-    color: #ffffff; /* Texto branco para contraste no hover */
+    background-color: #336596; /* Leve destaque azul ao passar o mouse */
+    color: #F8F4E3; /* Texto claro no hover */
 }
 
 #telo .col {
@@ -122,21 +113,16 @@ h3 {
     margin-right: 15px;
 }
 
-
-
 #telo .col.total-value {
     font-size: 1.5em;
-    color: #810020; 
+    color: #336596; /* Azul */
     font-weight: bold;
 }
-
-
 
 .row {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    
 }
 
 .col {
@@ -149,7 +135,7 @@ h3 {
     font-size: 1.2em;
 }
 
-.total-valor{
+.total-valor {
     font-size: 1.5em;
     color: #27ae60; /* verde */
 }
@@ -160,29 +146,26 @@ h3 {
     align-items: center;
 }
 
-button{
+button {
     font-weight: 600;
 }
 
 #finalizar {
     padding: 10px 15px;
-    background :linear-gradient(135deg, #810020, #a12b3c, #4b0010);
-    color: white;
+    background-color: #336596; /* Azul */
+    color: #F8F4E3; /* Texto claro */
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #3498db; /* azul claro */
-}
-.voltar{
-    margin-left: 890px;
+    background-color: #2a5176; /* Cor de hover mais escura */
 }
 
 .adicionarpedido {
-    background: linear-gradient(135deg, #810020, #a12b3c, #4b0010); 
-    color: #dfdede; 
+    background: linear-gradient(135deg, #336596, #1F3B57); /* Gradient azul */
+    color: #F8F4E3; /* Texto claro */
     border-radius: 10px; /* Bordas arredondadas */
     width: 180px;
     height: 30px;
@@ -193,13 +176,11 @@ button:hover {
     cursor: pointer; /* Mostra que é clicável */
     transition: background-color 0.4s ease, transform 0.3s ease; /* Transições suaves */
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.7); 
-    
 }
 
-
 .adicionarpedido:hover {
-    background: linear-gradient(135deg, #a12b3c, #c04851, #600013); 
-    color: white;
+    background: linear-gradient(135deg, #1F3B57, #336596); /* Gradient invertido */
+    color: #F8F4E3; /* Texto claro */
     transform: translateY(-2px); 
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); 
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.9); /* Adicionei uma sombra leve */
@@ -215,9 +196,7 @@ input[type="number"]::-webkit-inner-spin-button {
 /* Para Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
-    
 }
-
 
 .col {
     display: flex;
@@ -225,35 +204,29 @@ input[type="number"] {
     margin-bottom: 15px;
 }
 
-
-
-
 label {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 5px;
     font-weight: 700;
-    color: #D4AF37; /* Dourado */
+    color: #336596; /* Azul */
     font-family: 'Poppins', sans-serif;
     background: transparent;
-    
 }
 
 input[type="number"] {
     padding: 8px;
     font-size: 16px;
-    border: 3px solid #D4AF37;;
+    border: 3px solid #336596; /* Borda azul */
     border-radius: 4px;
     width: 60%;
     box-sizing: border-box;
     transition: border-color 0.3s;
     margin-left: 50px;
-    
-    
 }
 
 input[type="number"]:focus {
-    border-color:#b49941;; 
+    border-color: #2a5176; /* Azul mais escuro no foco */
     outline: none;
     box-shadow: 0px 2px 8px rgba(68, 67, 67, 0.9); /* Adicionei uma sombra leve */
 }
@@ -261,6 +234,35 @@ input[type="number"]:focus {
 input[type="number"]::placeholder {
     color: #000000;
 }
+
+.total {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1F3B57; /* Cor do texto claro */
+    
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block; /* Faz com que o texto total e o valor fiquem na mesma linha */
+}
+
+.btn.voltar {
+    background: linear-gradient(135deg, #1F3B57, #336596); /* Gradiente azul */
+    color: #F8F4E3; /* Texto claro */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: -76px;
+}
+
+.btn.voltar:hover {
+    background: linear-gradient(135deg, #336596, #1F3B57); /* Inverte gradiente no hover */
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Leve efeito de sombra */
+}
+
 
 
 

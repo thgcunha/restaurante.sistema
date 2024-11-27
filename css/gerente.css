@@ -4,11 +4,11 @@
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    color: #D4AF37;
-    
+    color:  #1F3B57; /* Texto claro */
 }
 
 /* Estilização dos botões */
+/* Certifique-se de que os botões são responsivos */
 .btopgerente {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
@@ -17,39 +17,75 @@
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-    background: linear-gradient(135deg, #e0c785 0%, #f0e3b2 50%, #fffdf2 100%);
-    color: #810020; 
+    background: linear-gradient(135deg, #336596 0%, #4b75a5 50%, #acc6e5 100%);
+    color: #F8F4E3; /* Texto claro */
     border: none;
-    padding: 20px; 
-    margin: 15px; 
-    font-family: "Lora", serif;
-    font-size: 18px; /* Aumentei o tamanho da fonte para mais legibilidade */
+    padding: 20px;
+    margin: 15px;
+    font-size: 18px;
     width: 160px;
     height: 160px;
-    border-radius: 12px; /* Pequeno ajuste para suavizar os cantos */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Aumentei a sombra para mais profundidade */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Adicionada transição para animação suave */
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover effect */
 .btopgerente:hover {
-    background: linear-gradient(135deg, #e6cc87 20%, #fffdf2 50%, #f0e3b2 100%);
-    color: #6f001a; /* Cor ligeiramente mais escura no hover */
-    transform: translateY(-5px); /* Animação de elevação ao passar o mouse */
+    background: linear-gradient(135deg, #3b6c94 20%, #acc6e5 50%, #4b75a5 100%);
+    color: #F8F4E3;
+    transform: translateY(-5px);
 }
 
+/* Ícones */
 i {
-    font-size: 2em; /* Aumenta o tamanho do ícone */
-    margin-bottom: 10px; /* Espaçamento entre o ícone e o texto */
+    font-size: 2em;
+    margin-bottom: 10px;
     background-color: transparent;
 }
+
+/* Ajustes de layout responsivo */
+@media (max-width: 768px) {
+    .colgerente {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .col-6 {
+        flex: 1 1 48%; /* Faz com que os itens ocupem 48% da largura em telas menores */
+        margin-bottom: 20px;
+    }
+
+    .btopgerente {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .col-6 {
+        flex: 1 1 50%; /* Ocupa 100% da largura para telas muito pequenas */
+        margin-bottom: 15px;
+    }
+
+    .btopgerente {
+        width: 120px;
+        height: 120px;
+    }
+}
+
 
 
 /* Alinhamento central das colunas */
 .colgerente {
     text-align: center;
     padding: 20px;
-    
-    
 }
 
 /* Container com margem automática para centralizar */
@@ -57,6 +93,25 @@ i {
     max-width: 900px;
     margin: 0 auto;
 }
+
+.btn.voltar {
+    background: linear-gradient(135deg, #1F3B57, #336596); /* Gradiente azul */
+    color: #F8F4E3; /* Texto claro */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+}
+
+.btn.voltar:hover {
+    background: linear-gradient(135deg, #336596, #1F3B57); /* Inverte gradiente no hover */
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Leve efeito de sombra */
+}
+
 
 
 

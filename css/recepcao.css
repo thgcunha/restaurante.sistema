@@ -2,9 +2,10 @@
     height: 100px;
     width: 100px;
     border-radius: 15px;
-    border: 4px solid #d4af37;
-    background-color: #810020;
-    color:#F8F4E3;
+    border: 6px double #5A8BB0;
+
+
+    background-color: #336596;
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
     transition: background-color 0.5s ease, transform 0.5s ease;
@@ -13,8 +14,8 @@
     height: 100px;
     width: 100px;
     border-radius: 15px;
-    border: 2px solid  #d4af37;
-    background-color: #810020;
+    border: 2px double #5A8BB0;
+    background-color: #336596;
     color: #F8F4E3;
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
@@ -27,7 +28,7 @@
     color: white; /* Texto branco */
     cursor: not-allowed; /* Muda o cursor para indicar que não está habilitado */
     pointer-events: none; /* Desabilita todos os eventos do mouse */
-    border: #333;
+    border: #3b3b3b;
 }
 .area {
     margin-top: 15px;
@@ -44,7 +45,7 @@
 .paragrafo-mesas {
     font-family: 'Arial', sans-serif; /* Fonte moderna */
     font-size: 18px; /* Tamanho da fonte */
-    color: #000000; /* Cor do texto */
+    color: #F2F2F2;
     padding: 40px; /* Espaçamento interno */
     border-radius: 10px; /* Bordas arredondadas */
     text-align: right; /* Alinha o texto à direita */
@@ -64,7 +65,8 @@
 
 /* Efeito ao passar o mouse */
 button.lib1:hover {
-    background: linear-gradient(135deg, #a12b3c, #810020, #4b0010); /* Inverte as cores do gradiente */
+    background: linear-gradient(135deg, #336596),  #1F3B57;
+    
     
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
     filter: brightness(1.1); /* Aumenta a luminosidade ao passar o mouse */
@@ -72,7 +74,7 @@ button.lib1:hover {
 
 
 button.lib1 {
-    background: linear-gradient(135deg, #810020, #a12b3c, #4b0010); /* Gradiente baseado na cor fornecida */
+    background: linear-gradient(135deg, #1F3B57, #336596);
     color: #F8F4E3; /* Cor do texto */
     padding: 10px 20px; /* Espaçamento interno */
     font-size: 16px; /* Tamanho da fonte */
@@ -89,7 +91,7 @@ button.lib1 {
 }
 
 button.liberar{
-    background :linear-gradient(135deg, #810020, #a12b3c, #4b0010);
+    background: linear-gradient(135deg, #1F3B57, #336596);
     color:  #F8F4E3 ; 
     border-radius: 8px;
     padding: 8px 20px;
@@ -98,6 +100,12 @@ button.liberar{
     margin-top: 35px;
     
 }
+
+button.liberar:hover{
+    background: linear-gradient(135deg, #336596, #719dfc ,#336596);
+}
+
+
 
 .row-liberar {
     display: flex; /* Usando Flexbox para alinhar os elementos lado a lado */

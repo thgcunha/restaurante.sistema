@@ -72,18 +72,21 @@
                     </thead>
                     <tbody id="sobremesas"></tbody>
                 </table>
-                <article class="row">
-                    <div class="col colnmesa">
+                <article class="row align-items-center">
+                    <!-- Coluna para o campo Mesa -->
+                    <div class="col-12 col-md-6 col-lg-6 mb-3">
                         <label for="mesa">Mesa:</label>
                         <input type="number" id="mesa" class="styled-input" placeholder="Número da mesa" required>
-                        
                     </div>
-                    <div class="col total">Total</div>
-                    <div class="col total-valor" id="totalDisplay">0,00 R$</div>
-                    <div class="col">
-                        <button id="finalizar" onclick="finalizarPedidoGarcom()">Finalizar Pedido</button>
+                    
+                    <!-- Coluna para o Total -->
+                    <div class="col-12 col-md-6 col-lg-6 mb-3 text-center">
+                        <div class="total" id="totalDisplay">
+                            Total: 0,00 R$
+                        </div>
                     </div>
                 </article>
+                
                 
                 <article class="row">
                     <div id="telo" class="container"></div>
@@ -91,11 +94,13 @@
                 
             </section>
         </div>
-        <a href="/index.html">
-            <button class="voltar">
-                Voltar
-            </button>
-        </a>
+        <div class="d-flex justify-content-center">
+            <a href="/index.html">
+                <button class="btn btn-primary voltar">
+                    Voltar
+                </button>
+            </a>
+        </div>
     </main>
 </body>
 </html>

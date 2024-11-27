@@ -1,15 +1,187 @@
-.container {
-    padding: 20px;
-    max-width: 1200px;
+/* Cor de texto clara para todo o documento */
+
+
+/* Estilos gerais para o container principal */
+.main-container {
+    max-width: 900px;
     margin: 0 auto;
+    padding: 20px;
 }
 
-h3 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #D4AF37; /* Dourado */
-    text-align: left;
-    margin-bottom: 15px;
-    font-family: 'Poppins', sans-serif;
+/* Estilos para a seção com os formulários de entrada */
+section.row {
+    margin-bottom: 1rem;
 }
+
+/* Formulários e inputs */
+input.form-control, select.form-control {
+    background: #ffffff;
+    color: #000000; /* Cor do texto dos inputs */
+    border: 2px solid #1F3B57;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+input.form-control:focus, select.form-control:focus {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    border-color: #316ca7;
+}
+
+/* Botão de adicionar comida */
+.btn-primary {
+    background: linear-gradient(135deg, #1F3B57, #336596); /* Gradiente azul */
+    color: #f7f7f7; /* Cor do texto do botão */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #336596, #1F3B57); /* Inverte gradiente no hover */
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos das tabelas */
+table.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #F8F4E3; /* Cor clara do texto */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 2px solid #000000;
+}
+
+table.table thead th {
+    color: #1F3B57; /* Cor do texto do cabeçalho */
+    background: rgba(0, 119, 255, 0.1);
+}
+
+table.table tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+
+table.table tbody tr:hover {
+    background-color: rgba(211, 175, 55, 0.2);
+}
+
+table.table th, table.table td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Estilo para os títulos das seções */
+h3 {
+    color: #1F3B57; /* Cor do título */
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos dos botões de ação nas tabelas */
+
+.btn-action:hover {
+    background: linear-gradient(135deg, #b99727 20%, #fffdf2 50%, #f0e3b2 100%);
+    color: #6f001a;
+}
+
+.btn.voltar {
+    background: linear-gradient(135deg, #1F3B57, #336596); /* Gradiente azul */
+    color: #F8F4E3; /* Texto claro */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+}
+
+.btn.voltar:hover {
+    background: linear-gradient(135deg, #336596, #1F3B57); /* Inverte gradiente no hover */
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Leve efeito de sombra */
+}
+
+/* Estilo dos botões Editar e Excluir */
+button.btn-editar, button.btn-excluir {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Estilo do botão Editar */
+.editar {
+    background-color: rgb(0, 0, 0);
+    color: rgb(252, 252, 252);
+}
+
+.btn-excluir {
+    background-color: red;
+    color: white;
+}
+
+/* Estilo para botões com ícones */
+button i {
+    font-size: 1.5em;
+    margin-right: 8px;
+}
+
+/* Foco nos botões */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Alinhamento e layout em dispositivos menores */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 10px;
+    }
+
+    input.form-control, select.form-control {
+        margin: 10px 0;
+    }
+
+    table.table {
+        margin: 0;
+    }
+
+    section.row {
+        display: block;
+    }
+
+    .btn-primary {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h3 {
+        font-size: 18px;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .btn-action {
+        padding: 4px 8px;
+    }
+}
+
 

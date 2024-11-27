@@ -1,6 +1,6 @@
 h4 {
-    font-size: 1.8rem;
-    color: #D4AF37;
+    font-size: 1.5rem;
+    color: #1F3B57; /* Cor alterada para combinar com o gradiente */
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2px;
@@ -13,7 +13,7 @@ h4::after {
     content: '';
     width: 380px;
     height: 3px;
-    background-color: #D4AF37;
+    background-color: #1F3B57; /* Cor ajustada */
     position: absolute;
     left: 0;
     bottom: 0;
@@ -22,22 +22,24 @@ h4::after {
 #cab2 {
     text-align: center;
     margin-top: 20px;
+    color: #F8F4E3; /* Ajustado para contraste com o fundo */
 }
 
 #hr1 {
     width: 100px;
     height: 3px;
-    background-color: #D4AF37;
+    background-color: #F8F4E3; /* Ajustado para combinar */
     border: none;
+    
 }
 
 .form-label {
     font-weight: bold;
-    color: #D4AF37;
+    color: #1F3B57; /* Alterado para contraste com o fundo */
 }
 
 #payment-form {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1); /* Mantido translúcido */
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
@@ -45,63 +47,71 @@ h4::after {
 
 .form-control {
     background-color: #ffffff;
-    color: #D4AF37;
-    border: 1px solid #D4AF37;
+    color: #1F3B57; /* Azul escuro para texto */
+    border: 1px solid #336596; /* Borda no tom do gradiente */
 }
 
 .form-control::placeholder {
-    color: #0f0f0f;
-
+    color: #888888; /* Neutro para placeholders */
 }
 
-    /* Para remover setas navegadores Webkit (Chrome, Safari, Edge) */
-    input[type="number"]::-webkit-outer-spin-button,
-    input[type="number"]::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-        
+/* Para remover setas navegadores Webkit (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
-
 
 input[type="number"] {
     -moz-appearance: textfield;
-    
 }
 
-
-
-
-#confirmar{
-    background :linear-gradient(135deg, #810020, #a12b3c, #4b0010);
-    color:  #F8F4E3 ; 
+#confirmar {
+    background: linear-gradient(135deg, #1F3B57, #336596); /* Gradiente azul */
+    color: #F8F4E3; 
     border-radius: 8px;
     padding: 8px 20px;
     font-family: 'Poppins', sans-serif;
     margin-top: 35px;
     text-align: center;
     font-weight: 600;
+    transition: 0.3s;
 }
 
-
+#confirmar:hover {
+    background: linear-gradient(135deg, #336596, #1F3B57); /* Invertido para efeito */
+    color: #ffffff;
+}
 
 .card {
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1); /* Mantido translúcido */
     border: none;
+    border-radius: 5px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card-body {
     font-size: 18px;
-    color: #D4AF37;
+    color: #1F3B57; /* Texto no tom mais claro */
 }
 
-.btn-primary:hover {
-    background-color: #a12b3c;
-    color: #fff;
+
+
+.btn.voltar {
+    background: linear-gradient(135deg, #1F3B57, #336596); /* Gradiente azul */
+    color: #F8F4E3; /* Texto claro */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.voltar{
-    margin-left: 890px;
+.btn.voltar:hover {
+    background: linear-gradient(135deg, #336596, #1F3B57); /* Inverte gradiente no hover */
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Leve efeito de sombra */
 }
 
