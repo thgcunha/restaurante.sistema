@@ -66,3 +66,11 @@ function carregarEstadoMesas() {
 
 // Chame a função ao carregar a página
 window.onload = carregarEstadoMesas;
+
+function animarMesa(mesaElement) {
+    mesaElement.style.transition = "transform 0.3s ease, background-color 0.3s ease";
+    mesaElement.style.transform = "scale(1.05)";
+    setTimeout(() => {
+        mesaElement.style.transform = "scale(1)";
+    }, 300);
+}

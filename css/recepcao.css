@@ -1,11 +1,14 @@
+body{
+    overflow: scroll!important;
+
+}
 .mesas {
     height: 100px;
     width: 100px;
+    color: white;
     border-radius: 15px;
-    border: 6px double #5A8BB0;
-
-
-    background-color: #336596;
+    border: none;
+    background: linear-gradient(135deg, #336e9e 20%, #0e3e79 50%, #3b689c 100%);
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
     transition: background-color 0.5s ease, transform 0.5s ease;
@@ -14,7 +17,7 @@
     height: 100px;
     width: 100px;
     border-radius: 15px;
-    border: 2px double #5A8BB0;
+    background: linear-gradient(135deg, #0f5085 20%, #0e3e79 50%, #275e9c 100%);
     background-color: #336596;
     color: #F8F4E3;
     font-family: "Montserrat", sans-serif;
@@ -25,7 +28,7 @@
 
 .disabled {
     background-color: gray; /* Cor cinza */
-    color: white; /* Texto branco */
+    color: rgb(255, 255, 255); /* Texto branco */
     cursor: not-allowed; /* Muda o cursor para indicar que não está habilitado */
     pointer-events: none; /* Desabilita todos os eventos do mouse */
     border: #3b3b3b;
@@ -35,6 +38,13 @@
     
 }
 
+.mesas.disabled {
+    background: linear-gradient(135deg, #d3d3d3, #9e9e9e); /* Gradiente cinza */
+    color: #ffffff; /* Texto branco */
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none; /* Remove sombra para um visual "desabilitado" */
+}
 
 
 
@@ -45,7 +55,8 @@
 .paragrafo-mesas {
     font-family: 'Arial', sans-serif; /* Fonte moderna */
     font-size: 18px; /* Tamanho da fonte */
-    color: #F2F2F2;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
     padding: 40px; /* Espaçamento interno */
     border-radius: 10px; /* Bordas arredondadas */
     text-align: right; /* Alinha o texto à direita */
@@ -118,3 +129,64 @@ button.liberar:hover{
     flex: 1; /* Distribui o espaço igualmente entre os botões */
     text-align: center; /* Centraliza o texto dentro de cada coluna */
 }
+
+@media (max-width: 992px) {
+    .mesas {
+        height: 80px;
+        width: 80px;
+        font-size: 25px;
+    }
+    .mesas:hover {
+        transform: scale(1.05);
+        height: 85px;
+        width: 85px;
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .mesas {
+        height: 70px;
+        width: 70px;
+        font-size: 22px;
+    }
+    .mesas:hover {
+        transform: scale(1.04);
+        height: 70px;
+        width: 70px;
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mesas {
+        height: 60px;
+        width: 60px;
+        font-size: 18px;
+    }
+    .mesas:hover {
+        transform: scale(1.01); /* Hover quase imperceptível */
+        height: 60px;
+        width: 60px;
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 428px) {
+    .mesas {
+        height: 50px;
+        width: 50px;
+        font-size: 18px;
+    }
+    .mesas:hover {
+        transform: scale(1.02); /* Hover quase imperceptível */
+        height: 50px;
+        width: 50px;
+        font-size: 19px;
+    }
+
+
+
+}
+

@@ -12,7 +12,8 @@ h2{
 
 
 .pedidos {
-    background: linear-gradient(135deg, #336596 0%, #1F3B57 50%, #F8F4E3 100%); /* Gradiente baseado nas cores fornecidas */
+    background: linear-gradient(135deg, #083c70,#4a6f94, #4875a1);
+
     border-radius: 25px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     padding: 30px;
@@ -40,7 +41,7 @@ h2{
     max-height: 300px;
     overflow-y: auto;
     box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.15);
-    border: 2px solid #336596; /* Usando a cor azul como borda */
+    border: 2px solid #ffffff; /* Usando a cor azul como borda */
     color: #336596; /* Cor do texto dentro da área de pedidos */
 }
 
@@ -76,7 +77,7 @@ h5{
 
 .pedido-disponivel{
     
-    color:#1F3B57; /* Dourado ou outra cor de sua escolha */
+    color:#1F3B57;
     font-size: 18px;
     font-weight: 600;
     text-align: center; /* Centraliza o texto */

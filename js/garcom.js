@@ -15,7 +15,7 @@ function adicionarItemTabela(tipo, nome, valor) {
         <td>${nome}</td>
         <td>${valor}</td>
         <td>
-            <button class="adicionarpedido" onclick="adicionarAoPedido('${nome}', ${valor})">Adicionar ao Pedido</button>
+            <button class="adicionarpedido" onclick="adicionarAoPedido('${nome}', ${valor}, '${tipo}')">Adicionar ao Pedido</button>
         </td>
     `;
     tbody.appendChild(row);
@@ -24,11 +24,11 @@ function adicionarItemTabela(tipo, nome, valor) {
 let total = 0;
 let itensPedido = [];
 
-function adicionarAoPedido(nome, valor) {
+function adicionarAoPedido(nome, valor, tipo) {
     total += valor; // Adiciona o valor ao total
 
-    // Adiciona o item ao pedido
-    itensPedido.push({ nome, valor });
+    // Adiciona o item ao pedido com o tipo
+    itensPedido.push({ nome, valor, tipo });
 
     atualizarTotal(); // Atualiza a exibição do total
     exibirItensPedido(); // Exibe os itens adicionados ao pedido
@@ -44,12 +44,31 @@ function exibirItensPedido() {
 
     itensPedido.forEach(item => {
         const itemDiv = document.createElement("div");
-        itemDiv.className = "row";
-        itemDiv.innerHTML = `<div class="col">${item.nome}</div><div class="col">${item.valor.toFixed(2).replace('.', ',')}</div>`;
+        itemDiv.className = `row ${item.tipo}`; // Adiciona a classe com o tipo (comida, bebida ou sobremesa)
+        itemDiv.innerHTML = `
+            <div class="col">
+                <span class="icon">${getIcon(item.tipo)}</span> <!-- Ícone do tipo -->
+                ${item.nome}
+            </div>
+            <div class="col">${item.valor.toFixed(2).replace('.', ',')}</div>
+        `;
         container.appendChild(itemDiv);
     });
 }
 
+// Função para retornar o ícone baseado no tipo
+function getIcon(tipo) {
+    switch(tipo) {
+        case 'comidas':
+            return "🍽️"; // Ícone de comida
+        case 'bebidas':
+            return "🍹"; // Ícone de bebida
+        case 'sobremesas':
+            return "🍰"; // Ícone de sobremesa
+        default:
+            return ; // Ícone padrão
+    }
+}
 
 
 function finalizarPedidoGarcom() {

@@ -1,0 +1,136 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f5f9; /* Cor de fundo suave */
+    color: #1F3B57; /* Cor principal do texto */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff; /* Fundo branco */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra mais sutil */
+}
+
+table, th, td {
+    border: 1px solid #1F3B57; /* Cor da borda mais suave */
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background: rgba(51, 101, 150, 0.1); /* Fundo leve para o cabeçalho */
+    color: #1F3B57;
+}
+
+.status-ok {
+    color: #28a745; /* Verde para status OK */
+}
+
+.status-low {
+    color: #ffc107; /* Amarelo para status baixo */
+}
+
+.status-critical {
+    color: #dc3545; /* Vermelho para status crítico */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: 0 auto;
+    background: #dbe9f6;;
+    padding: 16px;
+    border: 8px solid #1F3B57;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: #1F3B57;
+}
+
+form input, form button {
+    margin-bottom: 12px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #1F3B57;
+    border-radius: 6px;
+}
+
+form input {
+    background-color: #f9f9f9;
+    color: #284e74;
+}
+
+form input:focus {
+    border-color: #3371af;
+    outline: none;
+    box-shadow: 0 0 4px rgba(51, 101, 150, 0.3);
+}
+
+form button {
+    background: linear-gradient(135deg, #1F3B57, #336596);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 14px;
+    padding: 10px 18px;
+}
+
+form button:hover {
+    background: linear-gradient(135deg, #336596, #1F3B57);
+    transform: scale(1.03);
+}
+
+
+
+.solicitar {
+    background: linear-gradient(135deg, #1F3B57, #336596);
+    color: #F8F4E3;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.solicitar:hover {
+    background: linear-gradient(135deg, #336596, #719dfc, #336596);
+}
+
+.btn.voltar {
+    
+    
+    border: none;
+    
+    
+}
+
+.btn.voltar:hover {
+    background: linear-gradient(135deg, #336596, #1F3B57); /* Inverte gradiente no hover */
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Leve efeito de sombra */
+}

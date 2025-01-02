@@ -1,5 +1,8 @@
 /* Estilização geral das tabelas */
+body{
+    overflow: scroll!important;
 
+}
 
 .container {
     padding: 20px;
@@ -107,11 +110,45 @@ h3 {
 }
 
 /* Adicionando ícones para cada pedido */
-#telo .row:before {
-    content: "🍽️"; /* Exemplo de ícone (pode trocar por Font Awesome ou SVG) */
-    font-size: 24px;
-    margin-right: 15px;
+
+/* Estilo básico para os ícones */
+#telo .row .icon {
+    font-size: 30px; /* Tamanho maior para os ícones */
+    margin-right: 10px; /* Espaçamento entre o ícone e o nome do item */
+    padding: 5px; /* Adiciona algum espaço ao redor do ícone */
+    border-radius: 50%; /* Deixa o ícone redondo */
+    background-color: #f0f0f0; /* Cor de fundo suave */
+    display: inline-block; /* Faz o ícone e o texto ficarem na mesma linha */
+    text-align: center; /* Centraliza o ícone dentro do círculo */
+    width: 40px; /* Largura fixa para o círculo */
+    height: 40px; /* Altura fixa para o círculo */
+    line-height: 30px; /* Centraliza o ícone verticalmente */
+    transition: all 0.3s ease; /* Animação suave ao passar o mouse */
 }
+
+/* Efeito de hover para os ícones */
+#telo .row .icon:hover {
+    background-color: #336596; /* Altera o fundo do ícone para um tom mais escuro */
+    color: white; /* Muda a cor do ícone para branco */
+    transform: scale(1.1); /* Aumenta o tamanho do ícone ligeiramente */
+}
+
+/* Ícones de comida */
+#telo .row.comidas .icon {
+    background-color: #ffeb3b; /* Amarelo para comida */
+}
+
+/* Ícones de bebidas */
+#telo .row.bebidas .icon {
+    background-color: #4caf50; /* Verde para bebidas */
+}
+
+/* Ícones de sobremesas */
+#telo .row.sobremesas .icon {
+    background-color: #ff4081; /* Rosa para sobremesas */
+}
+
+
 
 #telo .col.total-value {
     font-size: 1.5em;

@@ -112,6 +112,37 @@ i {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Leve efeito de sombra */
 }
 
+.botao-editar {
+    background-color: #FFC107; /* Amarelo */
+    color: #000; /* Preto */
+    border: none; /* Remove borda */
+    padding: 5px 10px; /* Tamanho */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor clicável */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animação suave */
+}
+
+.botao-editar:hover {
+    background-color: #FFD54F; /* Amarelo mais claro */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+/* Botão Excluir */
+.botao-excluir {
+    background-color: #FF5252; /* Vermelho */
+    color: #fff; /* Branco */
+    border: none; /* Remove borda */
+    padding: 5px 10px; /* Tamanho */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor clicável */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animação suave */
+}
+
+.botao-excluir:hover {
+    background-color: #FF867F; /* Vermelho mais claro */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
 
 
 

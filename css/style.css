@@ -4,14 +4,15 @@
 * {
     margin: 0px;
     padding: 0px;
-    background-color:  #F2F2F2;
+    background-color:  #dbe9f6;
     /* border: 2px solid black; */
 }
 
 
 body {
-    background-color: #F2F2F2;
-
+    background-color: #dbe9f6;
+    overflow: hidden; /* Remove o scroll e fixa o conteúdo visível */
+    
     
 }
 
@@ -34,8 +35,12 @@ a {
 }
 
 #hr1 {
-    margin: 0px 400px;
-    border: 2px solid #D4AF37;
+    width: 80%; /* Ajusta a largura para responsividade */
+    margin: 10px auto; /* Centraliza e adiciona espaçamento superior/inferior */
+    border: 0; /* Remove o estilo padrão */
+    height: 2px; /* Define a altura */
+    background:  #dbe9f6; /* Cor branca para contraste com o fundo */
+    opacity: 0.8; /* Torna a linha levemente translúcida */
 }
 
 h1 {
@@ -74,37 +79,40 @@ main {
 
 .hcalendario {
     background-color: #336596;
-    border-radius: 9px 9px 0px 0px;
+    border: 2px solid  #336596;/* Adicionando uma borda consistente com uma tonalidade mais escura */
+    border-radius: 9px 9px 0 0;
     height: 50px;
     text-align: center;
+    color: #F2F2F2; /* Garante contraste com o texto */
 }
 
-.hcalendario>span {
-    background-color: #336596;
-    color:  #F2F2F2;
-    margin-top: px;
+.hcalendario > span {
+    background-color: transparent; /* Evita sobrescrever o fundo do contêiner */
+    color: #F2F2F2;
     font-size: 30px;
     font-family: "Lora", serif;
 }
 
-.corpocal>p {
+.corpocal {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 2px solid #336596;; /* Bordas harmonizadas com o cabeçalho */
+    border-radius: 0 0 9px 9px;
+}
+
+.corpocal > p {
     display: inline-block;
     width: 30%;
     margin: 0;
-
-}
-
-.corpocal {
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
-    border-radius: 0px 0px 9px 9px;
 }
 
 .apoio {
-    border: 5px solid   #195d91;
+    border: 5px solid #336596;
     border-radius: 15px;
+    background-color: #F2F2F2; /* Contraste com o conteúdo */
 }
+
 
 .prf {
     color: #F2F2F2;
@@ -207,24 +215,44 @@ img {
 
 footer {
     background: linear-gradient(135deg, #1F3B57, #336596);
-
     color: #F2F2F2;
     text-align: center;
     padding: 20px 0;
-    position: relative;
+    position: fixed; /* Fixa o rodapé na parte inferior da viewport */
     bottom: 0;
-    width: 100%;
-    margin-top: 350px;
-    
+    width: 100%; /* Garante que o rodapé ocupe toda a largura */
 }
 
 footer p {
     margin: 0;
     font-family:  'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 500;
     background: linear-gradient(135deg, #1F3B57, #336596);
 
     
     
+}
+
+.liberar , .voltar{
+    
+    
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow: auto; /* Permite rolagem em telas pequenas */
+    }
+
+    footer {
+        position: relative;  /* Desfaz o efeito de fixação */
+        bottom: auto;         /* Remove a fixação na parte inferior */
+        padding: 16px 0;      /* Ajuste do padding para telas menores */
+    }
 }

@@ -71,3 +71,4 @@ document.getElementById('payment-method').addEventListener('change', function() 
 
 
 
+
