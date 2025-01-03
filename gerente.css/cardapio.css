@@ -1,22 +1,22 @@
-/* Cor de texto clara para todo o documento */
 
 
-/* Estilos gerais para o container principal */
+
 .main-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
 }
 
-/* Estilos para a seção com os formulários de entrada */
+/* Seções de formulário */
 section.row {
     margin-bottom: 1rem;
 }
 
-/* Formulários e inputs */
+/* Inputs e selects */
 input.form-control, select.form-control {
     background: #ffffff;
-    color: #000000; /* Cor do texto dos inputs */
+    color: #000000;
     border: 2px solid #1F3B57;
     border-radius: 12px;
     padding: 10px;
@@ -24,183 +24,108 @@ input.form-control, select.form-control {
 }
 
 input.form-control:focus, select.form-control:focus {
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
     border-color: #316ca7;
+    box-shadow: 0 0 8px rgba(49, 108, 167, 0.4);
 }
 
-/* Botão de adicionar comida */
+/* Botão principal */
 .btn-primary {
-    background: linear-gradient(135deg, #1F3B57, #336596); /* Gradiente azul */
-    color: #f7f7f7; /* Cor do texto do botão */
+    background: linear-gradient(135deg, #1F3B57, #336596);
+    color: #f7f7f7;
     border: none;
     border-radius: 8px;
     padding: 10px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #336596, #1F3B57); /* Inverte gradiente no hover */
-    color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #336596, #1F3B57);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos das tabelas */
+/* Estilo das tabelas */
 table.table {
     width: 100%;
     margin-bottom: 1rem;
-    color: #F8F4E3; /* Cor clara do texto */
+    color: #1F3B57;
     background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    border: 2px solid #01306d;
-    text-align: center;
-    vertical-align:middle;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid  #1F3B57;
 }
 
 table.table thead th {
-    color: #1F3B57; /* Cor do texto do cabeçalho */
     background: rgba(0, 119, 255, 0.1);
     text-align: center;
-    vertical-align:middle;
+    padding: 10px;
+    font-weight: bold;
 }
-
-
 
 table.table tbody tr {
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.3s ease;
 }
 
-table.table tbody tr:hover {
-    background-color: rgba(211, 175, 55, 0.2);
-}
 
 table.table th, table.table td {
     padding: 10px;
-    text-align: left;
-}
-
-/* Estilo para os títulos das seções */
-h3 {
-    color: #1F3B57; /* Cor do título */
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;
-    font-weight: bold;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-/* Estilos dos botões de ação nas tabelas */
-
-.botao-editar , .botao-excluir {
-    
+/* Estilo dos botões de ação */
+.botao-editar, .botao-excluir {
     background: linear-gradient(135deg, #1F3B57, #336596);
-    color:  #F8F4E3 ; 
+    color: #f7f7f7;
+    border: none;
     border-radius: 5px;
-    width: 100px;
-    font-family: 'Poppins', sans-serif;
-    border: #000000;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-editar:hover {
+    background: linear-gradient(135deg, #336596, #1F3B57);
+}
+
+.botao-excluir:hover {
+    background: linear-gradient(135deg, #336596, #1F3B57);
+}
+
+/* Títulos */
+h3 {
+    color: #1F3B57;
+    font-size: 1.5rem;
     text-align: center;
-    font-weight: 600;
-    display: inline-block; /* Garante que os botões fiquem lado a lado */
-    margin: 0 5px; /* Adiciona espaçamento entre os botões */
-    
+    margin-bottom: 1rem;
 }
 
-.botao-editar:hover , .botao-excluir:hover{
-    background: linear-gradient(135deg, #336596, #143783 ,#5a9cdd);
-
-}
-
-
-
-
-
-
-
-
-
-/* Estilo para botões com ícones */
-button i {
-    font-size: 1.5em;
-    margin-right: 8px;
-}
-
-/* Foco nos botões */
-button:focus {
-    outline: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Alinhamento e layout em dispositivos menores */
+/* Responsividade */
 @media (max-width: 768px) {
     .main-container {
         padding: 10px;
     }
 
-    input.form-control, select.form-control {
-        margin: 10px 0;
-    }
-
     table.table {
-        margin: 0;
-    }
-
-    section.row {
-        display: block;
+        font-size: 14px;
     }
 
     .btn-primary {
         width: 100%;
-        margin: 5px 0;
+        padding: 8px;
     }
 }
 
 @media (max-width: 480px) {
     h3 {
-        font-size: 18px;
-    }
-
-    .btn-primary {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-
-    .btn-action {
-        padding: 4px 8px;
-    }
-}
-
-@media (max-width: 420px) {
-    h3 {
-        font-size: 14px; /* Melhor legibilidade */
-        padding: 12px;
+        font-size: 1.2rem;
     }
 
     .btn-primary {
         font-size: 14px;
-        padding: 10px 18px; /* Aumenta a área clicável */
-    }
-
-    .btn-action {
-        padding: 4px 8px; /* Mais confortável para o toque */
-    }
-
-    .botao-editar, .botao-excluir {
-        border-radius: 5px;
-        width: 64px; /* Garantir tamanho mínimo */
-        font-family: 'Poppins', sans-serif;
-        border: #000000;
-        text-align: center;
-        font-weight: 600;
-        display: inline-block; /* Garante alinhamento lado a lado */
-        margin: 4px; /* Espaçamento entre botões */
-    }
-
-    .botao-editar:hover, .botao-excluir:hover {
-        background: linear-gradient(135deg, #336596, #143783, #5a9cdd);
+        padding: 10px;
     }
 }
+
 
 
 

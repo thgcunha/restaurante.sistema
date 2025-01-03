@@ -22,92 +22,118 @@ h3 {
 /* Estilo da tabela */
 .table {
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     border-collapse: collapse;
-    background-color: #fff; /* Fundo branco para garantir contraste */
-    border-radius: 12px;
+    background-color: #fff; /* Fundo branco para contraste */
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra para destaque */
 }
 
-/* Estilo do cabeçalho (thead) */
+/* Estilo do cabeçalho da tabela */
 .table thead {
-    background-color: #336596; /* Cor de fundo azul */
+    background-color: #336596; /* Fundo azul */
     color: #F8F4E3; /* Texto claro */
 }
 
 .table th, .table td {
-    padding: 16px;
-    text-align: left;
-    font-size: 18px;
+    padding: 14px;
+    text-align: center; /* Alinhamento centralizado */
+    font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Separadores de linhas */
-    color: #000000; /* Cor do texto das células */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Separador de linha */
+    color: #000000; /* Cor do texto */
 }
 
-/* Estilo das linhas do corpo da tabela */
+/* Linhas do corpo da tabela */
 .table tbody tr {
     background-color: #fff;
+    transition: background-color 0.3s ease;
 }
 
 /* Efeito de hover nas linhas */
 .table tbody tr:hover {
-    background-color: #f0f0f0; /* Efeito de hover nas linhas */
+    background-color: #f7f7f7; /* Leve destaque ao passar o mouse */
 }
 
-/* Estilização dos botões na tabela */
+/* Botões dentro da tabela */
 .table .pedido-btn {
-    background-color: #336596; /* Botão azul */
+    background-color: #336596; /* Fundo azul */
     color: #F8F4E3; /* Texto claro */
-    padding: 8px 12px;
-    border-radius: 20px;
+    padding: 6px 12px;
+    border-radius: 8px;
     border: none;
-    cursor: pointer;
+    font-size: 14px;
     font-weight: 600;
-    font-size: 16px;
-    transition: background 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .table .pedido-btn:hover {
-    background-color: #2a5176; /* Cor de hover mais escura */
+    background-color: #2a5176; /* Azul mais escuro no hover */
+    transform: scale(1.05); /* Leve aumento no hover */
 }
 
-/* Estilização da área de itens do pedido */
-#telo .col {
-    background-color: transparent; /* Garante que não há fundo por trás do texto */
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: #050505; /* Cor do texto */
-    text-align: left;
-}
-
+/* Estilização dos itens em #telo */
 #telo .row {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 16px;
+    
     background-color: #fffdfd; /* Fundo branco para modernidade */
-    border-radius: 16px; /* Cantos mais arredondados */
-    margin-bottom: 15px;
-    border: 4px solid #336596; /* Borda azul */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9); /* Sombra mais suave */
+    border-radius: 10px; /* Cantos arredondados */
+    margin-bottom: 10px;
+    border: 2px solid #336596; /* Borda azul */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #telo .row:hover {
     transform: translateY(-5px); /* Efeito de elevação ao hover */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
-    background-color: #336596; /* Leve destaque azul ao passar o mouse */
-    color: #F8F4E3; /* Texto claro no hover */
+    background-color:  #a7c8e9; /* Leve destaque azul ao passar o mouse */
+    color: #F8F4E3; 
 }
+
 
 #telo .col {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    font-weight: 500;
-    color: #050505;
-    text-align: left; /* Alinhamento à esquerda para organização do conteúdo */
+    color: #333; /* Texto cinza escuro */
+    text-align: left;
+    background: transparent;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .table th, .table td {
+        font-size: 14px; /* Ajuste de tamanho da fonte */
+        padding: 10px; /* Redução do espaçamento */
+    }
+
+    #telo .row {
+        flex-direction: column; /* Empilhamento em telas menores */
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    #telo .col {
+        margin-bottom: 8px; /* Espaçamento entre as colunas */
+    }
+}
+
+@media (max-width: 480px) {
+    .table th, .table td {
+        font-size: 12px; /* Redução adicional do tamanho da fonte */
+        padding: 8px;
+    }
+
+    #telo .row {
+        padding: 8px;
+    }
+}
+
 
 /* Adicionando ícones para cada pedido */
 
@@ -172,10 +198,7 @@ h3 {
     font-size: 1.2em;
 }
 
-.total-valor {
-    font-size: 1.5em;
-    color: #27ae60; /* verde */
-}
+
 
 .update-button {
     display: flex;
@@ -188,40 +211,72 @@ button {
 }
 
 #finalizar {
-    padding: 10px 15px;
-    background-color: #336596; /* Azul */
+    background: linear-gradient(135deg,#1F3B57, #336596 ); /* Gradiente azul */
     color: #F8F4E3; /* Texto claro */
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 40%;
+    text-align: center;
+
 }
 
-button:hover {
-    background-color: #2a5176; /* Cor de hover mais escura */
+#finalizar:hover {
+    background: linear-gradient(135deg, #336596, #1F3B57); /* Inverte gradiente no hover */
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Leve efeito de sombra */
 }
 
 .adicionarpedido {
-    background: linear-gradient(135deg, #336596, #1F3B57); /* Gradient azul */
-    color: #F8F4E3; /* Texto claro */
-    border-radius: 10px; /* Bordas arredondadas */
-    width: 180px;
-    height: 30px;
-    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #003366, #00509e); /* Gradiente mais escuro no hover */
+    color: #ffffff; /* Texto claro */
+    border-radius: 12px; /* Bordas mais suaves */
+    width: 200px; /* Largura inicial */
+    height: 40px; /* Altura inicial */
+    
     text-align: center;
-    font-weight: 600;
-    font-size: 16px; /* Tamanho da fonte para legibilidade */
-    cursor: pointer; /* Mostra que é clicável */
-    transition: background-color 0.4s ease, transform 0.3s ease; /* Transições suaves */
-    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.7); 
+    font-weight: 700; /* Texto mais forte */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Indica que o botão é interativo */
+    transition: background-color 0.1s ease, transform 0.1s ease, box-shadow 0.2s ease; /* Suavidade nas transições */
+    border: 2px solid #003366; /* Adiciona uma borda fina */
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3); /* Sombra inicial */
 }
 
 .adicionarpedido:hover {
-    background: linear-gradient(135deg, #1F3B57, #336596); /* Gradient invertido */
-    color: #F8F4E3; /* Texto claro */
-    transform: translateY(-2px); 
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); 
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.9); /* Adicionei uma sombra leve */
+    background: linear-gradient(135deg, #003366, #00509e); /* Gradiente mais escuro no hover */
+    transform: scale(1.01); /* Leve aumento ao passar o mouse */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.5); /* Sombra mais forte no hover */
+    color: #F1F1F1; /* Texto ainda mais claro */
 }
+
+.adicionarpedido:active {
+    background: #003366; /* Fundo sólido no clique */
+    transform: scale(0.98); /* Leve redução para feedback de clique */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra reduzida */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .adicionarpedido {
+        width: 160px; /* Reduz a largura para telas menores */
+        height: 36px; /* Ajusta a altura */
+        font-size: 14px; /* Fonte menor */
+    }
+}
+
+@media (max-width: 480px) {
+    .adicionarpedido {
+        width: 140px; /* Mais compacto para telas muito pequenas */
+        height: 32px; /* Reduz ainda mais a altura */
+        font-size: 12px; /* Texto menor */
+        border-radius: 8px; /* Bordas ligeiramente menos arredondadas */
+    }
+}
+
 
 /* Para remover setas navegadores Webkit (Chrome, Safari, Edge) */
 input[type="number"]::-webkit-outer-spin-button,

@@ -50,7 +50,7 @@ function exibirItensPedido() {
                 <span class="icon">${getIcon(item.tipo)}</span> <!-- Ícone do tipo -->
                 ${item.nome}
             </div>
-            <div class="col">${item.valor.toFixed(2).replace('.', ',')}</div>
+            <div class="col">R$ ${item.valor.toFixed(2).replace('.', ',')}</div>
         `;
         container.appendChild(itemDiv);
     });

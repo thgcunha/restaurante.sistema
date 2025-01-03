@@ -55,19 +55,47 @@ p {
 }
 
 .finalizar {
-    background: linear-gradient(135deg, #336596 0%, #1F3B57 50%, #F8F4E3 100%); /* Gradiente com as cores definidas */
-    color: #F8F4E3; /* Cor do texto claro */
-    border-radius: 4px;
+    background: linear-gradient(135deg, #336596 0%, #1F3B57 50%, #022a75 100%);
+    color: #F8F4E3;
+    border-radius: 10px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    height: 35px;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .finalizar:hover {
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.9);
-    color: #F8F4E3; /* Mantém o texto claro no hover */
-    background: linear-gradient(195deg, #336596 0%, #1F3B57 50%, #F8F4E3 100%);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    color: #F8F4E3;
+    background: linear-gradient(195deg, #336596 0%, #1F3B57 50%, #144f92 100%);
+    transform: translateY(-2px);
 }
+
+.finalizar:active {
+    transform: translateY(2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .finalizar {
+        font-size: 16px; /* Reduz o tamanho da fonte para telas menores */
+        padding: 12px 24px; /* Aumenta o padding para facilitar o toque em dispositivos móveis */
+    }
+}
+
+@media (max-width: 480px) {
+    .finalizar {
+        font-size: 14px; /* Reduz ainda mais o tamanho da fonte */
+        padding: 10px 20px; /* Ajusta o padding para dispositivos muito pequenos */
+    }
+}
+
+
+
 
 
 h5{
