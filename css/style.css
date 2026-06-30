@@ -1,258 +1,285 @@
-
-/* CSS GERAL */
-
-* {
-    margin: 0px;
-    padding: 0px;
-    background-color:  #dbe9f6;
-    /* border: 2px solid black; */
+:root {
+    --bg-primary: #f0f4f8;
+    --bg-secondary: #ffffff;
+    --text-primary: #1F3B57;
+    --text-secondary: #5c7285;
+    --accent-color: #336596;
+    --accent-hover: #22486d;
+    --gold: #D4AF37;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --shadow-soft: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    background-color: #dbe9f6;
-    overflow: hidden; /* Remove o scroll e fixa o conteúdo visível */
-    
-    
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #e1eaf2 100%);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+labelezza-footer {
+    margin-top: auto;
+    width: 100%;
 }
 
 a {
     text-decoration: none;
 }
 
-
-#cab {
-    background-color: #336596;
-    height: 100px;
-    width: 100%;
-}
-
-#cab2 {
-    background-color: #336596;
-    
-    width: 100%;
-    
-}
-
-#hr1 {
-    width: 80%; /* Ajusta a largura para responsividade */
-    margin: 10px auto; /* Centraliza e adiciona espaçamento superior/inferior */
-    border: 0; /* Remove o estilo padrão */
-    height: 2px; /* Define a altura */
-    background:  #dbe9f6; /* Cor branca para contraste com o fundo */
-    opacity: 0.8; /* Torna a linha levemente translúcida */
-}
-
-h1 {
-    background-color: #336596; /* Azul petróleo escuro, elegante e moderno */
-    color: #ECF0F1; /* Branco suave com um toque de cinza para contraste refinado */
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 700; /* Peso da fonte para dar ênfase e presença */
-    font-style: normal;
-    text-align: center;
-    padding: 15px;
-    border-radius: 15px;
-
-
-
-}
-
-
-
-
-main {
-    padding: 20px;
-}
-
-.calendario {
-    margin-top: 35px;
-    border-radius: 15px;
-    padding: 20px;
-    /* Adiciona um espaçamento interno para dar mais "respiro" ao conteúdo */
-
-
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.hcalendario {
-    background-color: #336596;
-    border: 2px solid  #336596;/* Adicionando uma borda consistente com uma tonalidade mais escura */
-    border-radius: 9px 9px 0 0;
-    height: 50px;
-    text-align: center;
-    color: #F2F2F2; /* Garante contraste com o texto */
-}
-
-.hcalendario > span {
-    background-color: transparent; /* Evita sobrescrever o fundo do contêiner */
-    color: #F2F2F2;
-    font-size: 30px;
-    font-family: "Lora", serif;
-}
-
-.corpocal {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    border: 2px solid #336596;; /* Bordas harmonizadas com o cabeçalho */
-    border-radius: 0 0 9px 9px;
-}
-
-.corpocal > p {
-    display: inline-block;
-    width: 30%;
-    margin: 0;
-}
-
-.apoio {
-    border: 5px solid #336596;
-    border-radius: 15px;
-    background-color: #F2F2F2; /* Contraste com o conteúdo */
-}
-
-
-.prf {
-    color: #F2F2F2;
-    background-color: #336596;
-    height: 80px;
-    font-size: 25px;
-}
-
-.prf>span {
-    color: #F2F2F2;
-    background-color:   #336596;
-
-}
-
-/* provisorio */
-
-/* Estilo dos artigos */
-.col-menu {
-    padding: 10px;
-    color: #ffffff;
-    /* Texto branco */
-    font-family: 'Poppins', sans-serif;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
-    /* Sombra suave */
-    border: 2px solid #F2F2F2;
-    /* Border dourado */
-    background-color: #336596;
-    border-radius: 5px;
-}
-
-
-.op {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin: 15px;
-    background-color: #336596;
-    color: #F2F2F2;
-    border-radius: 15px;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Sombra suave */
-}
-
-
-
-.op:hover {
-    transform: scale(1.05);
-    /* Efeito de hover para aumentar levemente */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    /* Sombra mais intensa ao hover */
-}
-
-
-
-.btop {
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    border: 3px solid  #F2F2F2;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
-}
-
-.btop:hover {
-    background-color: #D4AF37;
-}
-
-
-
-img {
-
-    border-radius: 50%;
-    /* Raio da borda para formato redondo */
-}
-
-.voltar {
-    
-    background: linear-gradient(135deg, #1F3B57, #336596);
-    color:  #F8F4E3 ; 
-    border-radius: 8px;
-    padding: 8px 20px;
-    font-family: 'Poppins', sans-serif;
-    margin-top: 35px;
-    text-align: center;
-    font-weight: 600;
-}
-
-.voltar:hover{
-    background: linear-gradient(135deg, #336596, #719dfc ,#336596);
-
-}
-
-footer {
-    background: linear-gradient(135deg, #1F3B57, #336596);
-    color: #F2F2F2;
-    text-align: center;
+/* Header Labelezza */
+header {
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-color));
     padding: 20px 0;
-    position: fixed; /* Fixa o rodapé na parte inferior da viewport */
-    bottom: 0;
-    width: 100%; /* Garante que o rodapé ocupe toda a largura */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #fff;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+hr#hr1 {
+    width: 60%;
+    margin: 10px auto;
+    border-top: 2px solid rgba(255,255,255,0.3);
+}
+
+/* Footer Labelezza */
+footer {
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-color));
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
 }
 
 footer p {
     margin: 0;
-    font-family:  'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    background: linear-gradient(135deg, #1F3B57, #336596);
-
-    
-    
+    font-size: 14px;
+    opacity: 0.8;
 }
 
-.liberar , .voltar{
-    
-    
+/* Glassmorphism Containers */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn-primary, .voltar {
+    background: linear-gradient(135deg, var(--accent-color), var(--text-primary));
     border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    
+    border-radius: 10px;
+    padding: 10px 25px;
+    color: #fff;
     font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn-primary:hover, .voltar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-hover));
+}
+
+/* Menu Items / Roles */
+.op {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 25px 15px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    height: 100%;
+}
+
+.op:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: var(--accent-color);
+}
+
+.btop {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.op:hover .btop {
+    background: var(--gold);
+}
+
+.col-menu {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Calendario Redesign */
+.calendario {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    padding: 0 15px;
+}
+
+.apoio {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.hcalendario {
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-color));
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.corpocal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.corpocal p {
+    text-align: center;
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.corpocal p span:last-child {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.corpocal .prf {
+    font-size: 15px;
+    color: #fff;
+    background: var(--accent-color);
+    padding: 15px 5px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(51, 101, 150, 0.4);
+    transform: scale(1.1);
+    z-index: 2;
+    margin: 0 10px;
+}
+.corpocal .prf span {
+    color: #fff;
+}
+.corpocal .prf span:last-child {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Table Styles */
+table.table {
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+table.table th {
+    background: var(--text-primary);
+    color: #fff;
+    font-weight: 500;
+    border: none;
+}
+
+table.table td {
+    vertical-align: middle;
+    border-color: #edf2f7;
+}
+
+/* Gerente e Outras Paginas - Botoes de Acao (btopgerente etc) */
+.btopgerente, .btopcaixa, .btopgarcom {
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.btopgerente i, .btopcaixa i, .btopgarcom i {
+    font-size: 2rem;
+    color: var(--accent-color);
     transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        overflow: auto; /* Permite rolagem em telas pequenas */
-    }
+.btopgerente:hover, .btopcaixa:hover, .btopgarcom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background: var(--accent-color);
+    color: #fff;
+}
 
-    footer {
-        position: relative;  /* Desfaz o efeito de fixação */
-        bottom: auto;         /* Remove a fixação na parte inferior */
-        padding: 16px 0;      /* Ajuste do padding para telas menores */
-    }
+.btopgerente:hover i, .btopcaixa:hover i, .btopgarcom:hover i {
+    color: #fff;
 }

@@ -1,75 +1,78 @@
-document.addEventListener("DOMContentLoaded", carregarDados);
-
-function carregarDados() {
-    const tipos = ["comidas", "bebidas", "sobremesas"];
-    tipos.forEach(tipo => {
-        const dados = JSON.parse(localStorage.getItem(tipo)) || [];
-        dados.forEach(item => adicionarItemTabela(tipo, item.nome, item.valor));
-    });
-}
-
-function adicionarItemTabela(tipo, nome, valor) {
-    const tbody = document.getElementById(tipo);
-    const row = document.createElement("tr");
-    row.innerHTML = `
-        <td>${nome}</td>
-        <td>${valor}</td>
-        <td>
-            <button class="adicionarpedido" onclick="adicionarAoPedido('${nome}', ${valor}, '${tipo}')">Adicionar ao Pedido</button>
-        </td>
-    `;
-    tbody.appendChild(row);
-}
+import { StorageService } from './storage.js';
+import { formatCurrency } from './utils.js';
 
 let total = 0;
 let itensPedido = [];
 
+function carregarDados() {
+    const tipos = ["comidas", "bebidas", "sobremesas"];
+    tipos.forEach(tipo => {
+        const dados = StorageService.getData(tipo);
+        dados.forEach(item => adicionarItemTabela(tipo, item.nome, item.valor));
+    });
+}
+
+function adicionarItemTabela(tipo, nome, valorStr) {
+    const tbody = document.getElementById(tipo);
+    if(!tbody) return;
+    
+    // Parse value to ensure it's a number
+    const valor = typeof valorStr === 'string' ? parseFloat(valorStr.replace(',', '.')) : valorStr;
+    
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td>${nome}</td>
+        <td>${formatCurrency(valor)}</td>
+        <td>
+            <button class="adicionarpedido btn btn-sm btn-primary">Adicionar ao Pedido</button>
+        </td>
+    `;
+    
+    row.querySelector('.adicionarpedido').addEventListener('click', () => adicionarAoPedido(nome, valor, tipo));
+    tbody.appendChild(row);
+}
+
 function adicionarAoPedido(nome, valor, tipo) {
-    total += valor; // Adiciona o valor ao total
-
-    // Adiciona o item ao pedido com o tipo
+    total += valor; 
     itensPedido.push({ nome, valor, tipo });
-
-    atualizarTotal(); // Atualiza a exibição do total
-    exibirItensPedido(); // Exibe os itens adicionados ao pedido
+    atualizarTotal(); 
+    exibirItensPedido(); 
 }
 
 function atualizarTotal() {
-    document.querySelector("#totalDisplay").innerHTML = total.toFixed(2).replace('.', ',');
+    const totalDisplay = document.querySelector("#totalDisplay");
+    if(totalDisplay) {
+        totalDisplay.innerHTML = `Total: ${formatCurrency(total)}`;
+    }
 }
 
 function exibirItensPedido() {
     const container = document.getElementById("telo");
-    container.innerHTML = ''; // Limpa o conteúdo anterior
+    if(!container) return;
+    container.innerHTML = ''; 
 
     itensPedido.forEach(item => {
         const itemDiv = document.createElement("div");
-        itemDiv.className = `row ${item.tipo}`; // Adiciona a classe com o tipo (comida, bebida ou sobremesa)
+        itemDiv.className = `row ${item.tipo} mb-2 align-items-center p-2 border rounded bg-white shadow-sm`; 
         itemDiv.innerHTML = `
             <div class="col">
-                <span class="icon">${getIcon(item.tipo)}</span> <!-- Ícone do tipo -->
+                <span class="icon">${getIcon(item.tipo)}</span> 
                 ${item.nome}
             </div>
-            <div class="col">R$ ${item.valor.toFixed(2).replace('.', ',')}</div>
+            <div class="col fw-bold text-end">${formatCurrency(item.valor)}</div>
         `;
         container.appendChild(itemDiv);
     });
 }
 
-// Função para retornar o ícone baseado no tipo
 function getIcon(tipo) {
     switch(tipo) {
-        case 'comidas':
-            return "🍽️"; // Ícone de comida
-        case 'bebidas':
-            return "🍹"; // Ícone de bebida
-        case 'sobremesas':
-            return "🍰"; // Ícone de sobremesa
-        default:
-            return ; // Ícone padrão
+        case 'comidas': return "🍽️"; 
+        case 'bebidas': return "🍹"; 
+        case 'sobremesas': return "🍰"; 
+        default: return ""; 
     }
 }
-
 
 function finalizarPedidoGarcom() {
     if (itensPedido.length === 0) {
@@ -77,36 +80,38 @@ function finalizarPedidoGarcom() {
         return;
     }
 
-    const mesa = document.getElementById("mesa").value; // Captura o número da mesa
+    const mesa = document.getElementById("mesa").value; 
     if (!mesa) {
         alert("Por favor, informe o número da mesa!");
         return;
     }
 
-    const pedidoId = Date.now(); // Usar timestamp como ID único
     const pedidoCompleto = {
-        id: pedidoId,
-        mesa: mesa, // Adiciona o número da mesa
+        id: Date.now(),
+        mesa: mesa, 
         itens: itensPedido,
         total: total
     };
 
-    const pedidosExistentes = JSON.parse(localStorage.getItem("pedidosCozinheiro")) || [];
-    pedidosExistentes.push(pedidoCompleto);
-    localStorage.setItem("pedidosCozinheiro", JSON.stringify(pedidosExistentes));
+    StorageService.addItem("pedidosCozinheiro", pedidoCompleto);
 
-
-    
-
-
-    // Limpar o pedido do garçom
     itensPedido = [];
     total = 0;
     atualizarTotal();
     exibirItensPedido();
-    document.getElementById("mesa").value = ''; // Limpa o campo da mesa
+    document.getElementById("mesa").value = ''; 
 
     alert("Pedido finalizado e enviado para a cozinha!");
 }
 
-
+document.addEventListener("DOMContentLoaded", () => {
+    carregarDados();
+    
+    // Check if we are on the garcom page before attaching
+    const btnFinalizar = document.getElementById('finalizar');
+    if (btnFinalizar) {
+        btnFinalizar.removeAttribute('onclick'); // remove inline
+        btnFinalizar.addEventListener('click', finalizarPedidoGarcom);
+        btnFinalizar.className = "btn btn-success mt-3";
+    }
+});

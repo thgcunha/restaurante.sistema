@@ -6,8 +6,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
             defer></script>
-        <script src="/js/script.js" defer></script>
-        <script src="/js/mesas.js" defer></script>
+        <script type="module" src="/js/script.js" defer></script>
+        <script type="module" src="/js/mesas.js" defer></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -26,14 +26,7 @@
         <link rel="icon" type="image/x-icon" href="/img/gerente (1).png">
     </head>
 <body>
-    <header id="cab2">
-        <h1>
-            La Belezza
-            <br>
-            <hr id="hr1">
-            Gerente
-        </h1>
-    </header>
+    <labelezza-header subtitle="Gerente"></labelezza-header>
     <main>
         <div class="container-fluid">
             <h3 id="h3gerente">
@@ -41,16 +34,20 @@
             </h3>
             <section class="row">
                 <article class="col-6 col-sm-3 colgerente">
-                    <button class="btopgerente">
-                        <i class="fas fa-utensils"></i>
-                        Mesas
-                    </button>
+                    <a href="/subpages/mesas.html">
+                        <button class="btopgerente">
+                            <i class="fas fa-utensils"></i>
+                            Mesas
+                        </button>
+                    </a>
                 </article>
                 <article class="col-6 col-sm-3 colgerente">
-                    <button class="btopgerente">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                        Contas Pendentes
-                    </button>
+                    <a href="/subpages/contas_pendentes.html">
+                        <button class="btopgerente">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            Contas Pendentes
+                        </button>
+                    </a>
                 </article>
                 <article class="col-6 col-sm-3 colgerente">
                     <a href="/subpages/cardapio.html">
@@ -61,24 +58,30 @@
                     </a>
                 </article>
                 <article class="col-6 col-sm-3 colgerente">
-                    <button class="btopgerente">
-                        <i class="fas fa-calendar-alt"></i>
-                        Reservas
-                    </button>
+                    <a href="/subpages/reservas.html">
+                        <button class="btopgerente">
+                            <i class="fas fa-calendar-alt"></i>
+                            Reservas
+                        </button>
+                    </a>
                 </article>
             </section>
             <section class="row">
                 <article class="col-6 col-sm-3 colgerente">
-                    <button class="btopgerente">
-                        <i class="fas fa-clipboard-list"></i>
-                        Pedidos
-                    </button>
+                    <a href="/subpages/pedidos.html">
+                        <button class="btopgerente">
+                            <i class="fas fa-clipboard-list"></i>
+                            Pedidos
+                        </button>
+                    </a>
                 </article>
                 <article class="col-6 col-sm-3 colgerente">
-                    <button class="btopgerente">
-                        <i class="fas fa-chart-line"></i>
-                        Valor Vendido
-                    </button>
+                    <a href="/subpages/valor_vendido.html">
+                        <button class="btopgerente">
+                            <i class="fas fa-chart-line"></i>
+                            Valor Vendido
+                        </button>
+                    </a>
                 </article>
                 <article class="col-6 col-sm-3 colgerente">
                     <a href="/subpages/estoques.html">
@@ -89,10 +92,12 @@
                     </a>
                 </article>
                 <article class="col-6 col-sm-3 colgerente">
-                    <button class="btopgerente">
-                        <i class="fas fa-chart-bar"></i>
-                        Pesquisas
-                    </button>
+                    <a href="/subpages/pesquisas.html">
+                        <button class="btopgerente">
+                            <i class="fas fa-chart-bar"></i>
+                            Pesquisas
+                        </button>
+                    </a>
                 </article>
             </section>
             
@@ -103,7 +108,8 @@
                 </button>
             </a>
         </div>
+        </div>
     </main>
-    
+    <labelezza-footer></labelezza-footer>
 </body>
 </html>

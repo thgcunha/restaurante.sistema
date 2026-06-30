@@ -1,76 +1,101 @@
-function liberar() {
-    let htmlContent = ''; // Inicializa uma string para armazenar o conteúdo HTML
+import { StorageService } from './storage.js';
 
+function inicializarRecepcao() {
+    const btnLiberar = document.querySelector('.liberar');
+    if (btnLiberar) {
+        btnLiberar.removeAttribute('onclick');
+        btnLiberar.addEventListener('click', liberar);
+    }
+    
+    // Configura botões das mesas
     for (let i = 1; i <= 25; i++) {
-        const mesa = document.getElementById(`mesa${i}`); // Captura cada mesa pelo ID
-        const mesaEstado = localStorage.getItem(`mesa${i}`); // Recupera o estado da mesa
-
-        if (mesa && mesaEstado === 'disabled') {
-            htmlContent += `<p class="paragrafo-mesas">Mesa ${i} <button class="lib1" onclick="lib(${i})">Liberar</button></p>`;
+        const mesaBtn = document.getElementById(`mesa${i}`);
+        if (mesaBtn) {
+            mesaBtn.removeAttribute('onclick');
+            mesaBtn.addEventListener('click', () => reservarMesa(i));
         }
     }
-
-    if (htmlContent) {
-        document.getElementById("mesasusadas").innerHTML = htmlContent; // Atualiza o conteúdo da div
-    } else {
-        alert('Nenhuma mesa desativada encontrada.');
-    }
+    carregarEstadoMesas();
 }
 
-function voltar() {
-    document.getElementById("telarecepcao").style.display = "none";
-    document.getElementById("telaprincipal").style.display = "block";
-}
-
-function mesa(num) {
-    const cliente = prompt('Digite o seu CPF');
-    if (cliente !== null) {
+function reservarMesa(num) {
+    const cliente = prompt('Digite o CPF do cliente:');
+    if (cliente) {
         localStorage.setItem('cliente', cliente);
-        alert('Cliente registrado: ' + cliente + ' na mesa ' + num);
-        const mesabt = document.getElementById("mesa" + num);
-        mesabt.disabled = true;
-        mesabt.classList.add('disabled');
-        localStorage.setItem(`mesa${num}`, 'disabled'); // Salva o estado da mesa como desativada
+        const mesaBtn = document.getElementById(`mesa${num}`);
+        if(mesaBtn) {
+            mesaBtn.disabled = true;
+            mesaBtn.classList.add('disabled');
+        }
+        localStorage.setItem(`mesa${num}`, 'disabled');
+        animarMesa(mesaBtn);
+        alert(`Cliente registrado: ${cliente} na mesa ${num}`);
     } else {
         alert('Entrada cancelada.');
     }
 }
 
-function lib(num) {
-    const mesa = document.getElementById('mesa' + num);
+function liberar() {
+    const container = document.getElementById("mesasusadas");
+    if (!container) return;
     
-    // Verifica se a classe 'disabled' está presente
-    if (mesa.classList.contains('disabled')) {
-        mesa.classList.remove('disabled'); // Remove a classe 'disabled'
-        alert('Mesa ' + num + ' liberada!');
-        mesa.disabled = false;
-        localStorage.removeItem(`mesa${num}`); // Remove o estado da mesa
-    } else {
-        alert('A mesa não possui a classe "disabled".');
+    container.innerHTML = '';
+    let encontradas = false;
+
+    for (let i = 1; i <= 25; i++) {
+        const estado = localStorage.getItem(`mesa${i}`);
+        if (estado === 'disabled') {
+            encontradas = true;
+            const p = document.createElement('p');
+            p.className = 'paragrafo-mesas';
+            p.innerHTML = `Mesa ${i} <button class="lib1 btn btn-sm btn-success text-white">Liberar</button>`;
+            
+            p.querySelector('button').addEventListener('click', () => lib(i));
+            container.appendChild(p);
+        }
     }
-    document.getElementById("mesasusadas").innerText = "";
+
+    if (!encontradas) {
+        alert('Nenhuma mesa ocupada encontrada.');
+    }
 }
 
-// Função para carregar o estado das mesas ao iniciar
+function lib(num) {
+    const mesaBtn = document.getElementById(`mesa${num}`);
+    if (mesaBtn) {
+        mesaBtn.classList.remove('disabled');
+        mesaBtn.disabled = false;
+    }
+    localStorage.removeItem(`mesa${num}`);
+    alert(`Mesa ${num} liberada!`);
+    
+    const container = document.getElementById("mesasusadas");
+    if (container) container.innerHTML = '';
+}
+
 function carregarEstadoMesas() {
     for (let i = 1; i <= 25; i++) {
-        const mesa = document.getElementById(`mesa${i}`);
-        const mesaEstado = localStorage.getItem(`mesa${i}`); // Recupera o estado da mesa
-
-        if (mesaEstado === 'disabled') {
-            mesa.classList.add('disabled'); // Adiciona a classe 'disabled'
-            mesa.disabled = true; // Desabilita a mesa
+        const mesaBtn = document.getElementById(`mesa${i}`);
+        if (!mesaBtn) continue;
+        
+        const estado = localStorage.getItem(`mesa${i}`);
+        if (estado === 'disabled') {
+            mesaBtn.classList.add('disabled');
+            mesaBtn.disabled = true;
+        } else {
+            mesaBtn.classList.remove('disabled');
+            mesaBtn.disabled = false;
         }
     }
 }
 
-// Chame a função ao carregar a página
-window.onload = carregarEstadoMesas;
-
 function animarMesa(mesaElement) {
+    if(!mesaElement) return;
     mesaElement.style.transition = "transform 0.3s ease, background-color 0.3s ease";
     mesaElement.style.transform = "scale(1.05)";
     setTimeout(() => {
         mesaElement.style.transform = "scale(1)";
     }, 300);
 }
+
+document.addEventListener('DOMContentLoaded', inicializarRecepcao);

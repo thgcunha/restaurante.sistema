@@ -1,178 +1,154 @@
-// Variáveis globais
-let total = 0; // Armazena o total do pedido
-let itensPedido = []; // Armazena os itens do pedido
+import { StorageService } from './storage.js';
+import { formatCurrency } from './utils.js';
 
-// Carrega os dados ao carregar a página
-document.addEventListener("DOMContentLoaded", carregarDados);
-
-// Função para carregar dados salvos no localStorage
 function carregarDados() {
     const tipos = ["comidas", "bebidas", "sobremesas"];
     tipos.forEach(tipo => {
-        const dados = JSON.parse(localStorage.getItem(tipo)) || [];
+        const tbody = document.getElementById(tipo);
+        if (!tbody) return; 
+        
+        tbody.innerHTML = ''; 
+        const dados = StorageService.getData(tipo);
         dados.forEach(item => {
-            const valorNumerico = parseFloat(item.valor).toFixed(2).replace(".", ",");
-            adicionarItemTabela(tipo, item.nome, valorNumerico);
+            adicionarItemTabela(tipo, item.nome, item.valor);
         });
     });
 }
 
-document.addEventListener("DOMContentLoaded", carregarDados);
-
-
-// Função para adicionar uma nova comida
 function adicionarComida() {
-    const nome = document.getElementById("nomecomida").value.trim();
-    const valor = document.getElementById("valorcomida").value.trim();
-    const tipo = document.getElementById("tipodecomida").value;
+    const nomeInput = document.getElementById("nomecomida");
+    const valorInput = document.getElementById("valorcomida");
+    const tipoInput = document.getElementById("tipodecomida");
+
+    if (!nomeInput || !valorInput || !tipoInput) return;
+
+    const nome = nomeInput.value.trim();
+    const valor = valorInput.value.trim();
+    const tipo = tipoInput.value;
 
     if (nome && valor && tipo) {
-        adicionarItemTabela(tipo, nome, valor);
-        salvarDados(tipo, nome, valor);
+        StorageService.addItem(tipo, { nome, valor });
+        carregarDados();
         limparFormulario();
     } else {
         alert("Preencha todos os campos antes de adicionar.");
     }
 }
 
-// Função para adicionar um item à tabela
 function adicionarItemTabela(tipo, nome, valor) {
     const tbody = document.getElementById(tipo);
+    if (!tbody) return;
+
     const row = document.createElement("tr");
-    const valorFormatado = `R$ ${parseFloat(valor).toFixed(2).replace('.', ',')}`; // Formata o valor como R$ com 2 casas decimais
+    const valorFormatado = formatCurrency(valor);
+    
     row.innerHTML = `
         <td>${nome}</td>
         <td>${valorFormatado}</td>
         <td>
-            <button class="botao-editar" onclick="editarItem(this)">Editar</button>
-            <button class="botao-excluir" onclick="excluirItem(this)">Excluir</button>
+            <button class="botao-editar btn btn-sm btn-warning text-white">Editar</button>
+            <button class="botao-excluir btn btn-sm btn-danger">Excluir</button>
         </td>
     `;
+    
+    row.querySelector('.botao-editar').addEventListener('click', () => editarItem(tipo, nome, valor));
+    row.querySelector('.botao-excluir').addEventListener('click', () => excluirItem(tipo, nome, valor));
+    
     tbody.appendChild(row);
 }
 
-// Função para salvar dados no localStorage
-function salvarDados(tipo, nome, valor) {
-    const dados = JSON.parse(localStorage.getItem(tipo)) || [];
-    const valorFormatado = parseFloat(valor).toFixed(2);
-    dados.push({ nome, valor: valorFormatado });
-    localStorage.setItem(tipo, JSON.stringify(dados));
-}
-
-
-// Função para editar um item da tabela
-function editarItem(button) {
-    const row = button.parentElement.parentElement;
-    const nome = row.children[0].innerText;
-    const valor = row.children[1].innerText;
-    const tipo = row.parentElement.id;
-
-    // Preenche o formulário com os dados do item selecionado
+function editarItem(tipo, nome, valor) {
     document.getElementById("nomecomida").value = nome;
     document.getElementById("valorcomida").value = valor;
     document.getElementById("tipodecomida").value = tipo;
 
-    // Exclui o item da tabela e do localStorage para evitar duplicidade
-    excluirItem(button);
+    excluirItem(tipo, nome, valor);
 }
 
-// Função para excluir um item da tabela
-function excluirItem(button) {
-    const row = button.parentElement.parentElement;
-    const tipo = row.parentElement.id;
-    const nome = row.children[0].innerText;
-    const valor = row.children[1].innerText;
-
-    row.remove(); // Remove a linha da tabela
-    removerDados(tipo, nome, valor); // Remove do localStorage
+function excluirItem(tipo, nome, valor) {
+    StorageService.removeItem(tipo, item => item.nome === nome && item.valor === valor);
+    carregarDados();
 }
 
-// Função para remover dados do localStorage
-function removerDados(tipo, nome, valor) {
-    const dados = JSON.parse(localStorage.getItem(tipo)) || [];
-    const valorNumerico = parseFloat(valor.replace("R$ ", "").replace(",", "."));
-    const novosDados = dados.filter(item => !(item.nome === nome && parseFloat(item.valor) === valorNumerico));
-    localStorage.setItem(tipo, JSON.stringify(novosDados));
-}
-
-
-// Função para limpar o formulário
 function limparFormulario() {
     document.getElementById("nomecomida").value = '';
     document.getElementById("valorcomida").value = '';
-    
 }
 
-
-    // Estoques
-    
-    document.addEventListener("DOMContentLoaded", function() {
-        // Função para atualizar o status do estoque com base na quantidade
-        function atualizarStatus() {
-            const statusElements = document.querySelectorAll('.status-ok, .status-low, .status-critical');
-            
-            // Loop para atualizar o status baseado na quantidade
-            const rows = document.querySelectorAll('tbody tr');
-            rows.forEach(row => {
-                const quantidade = parseInt(row.cells[1].innerText);
-                const statusSpan = row.querySelector('span');
-                
-                if (quantidade > 20) {
-                    statusSpan.classList.remove('status-low', 'status-critical');
-                    statusSpan.classList.add('status-ok');
-                    statusSpan.innerText = 'Estoque OK';
-                } else if (quantidade > 5) {
-                    statusSpan.classList.remove('status-ok', 'status-critical');
-                    statusSpan.classList.add('status-low');
-                    statusSpan.innerText = 'Estoque Baixo';
-                } else {
-                    statusSpan.classList.remove('status-ok', 'status-low');
-                    statusSpan.classList.add('status-critical');
-                    statusSpan.innerText = 'Crítico';
-                }
-            });
+function atualizarStatusEstoque() {
+    const rows = document.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+        if (row.cells.length !== 4) return;
+        
+        const cell = row.cells[1];
+        if (!cell) return;
+        
+        const quantidade = parseInt(cell.innerText);
+        if (isNaN(quantidade)) return;
+        
+        const statusSpan = row.querySelector('span');
+        if (!statusSpan) return;
+        
+        statusSpan.className = ''; 
+        if (quantidade > 20) {
+            statusSpan.classList.add('status-ok', 'badge', 'bg-success');
+            statusSpan.innerText = 'Estoque OK';
+        } else if (quantidade > 5) {
+            statusSpan.classList.add('status-low', 'badge', 'bg-warning', 'text-dark');
+            statusSpan.innerText = 'Estoque Baixo';
+        } else {
+            statusSpan.classList.add('status-critical', 'badge', 'bg-danger');
+            statusSpan.innerText = 'Crítico';
         }
+    });
+}
 
-        // Função para adicionar item novo ao estoque
-        const form = document.querySelector('form');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita o envio do formulário
+function inicializarGerente() {
+    const btnAddComida = document.getElementById('btnAdicionarComida');
+    if (btnAddComida) {
+        btnAddComida.addEventListener('click', adicionarComida);
+    }
+    carregarDados();
+
+    const formEstoque = document.querySelector('form');
+    if (formEstoque) {
+        formEstoque.addEventListener('submit', function(event) {
+            event.preventDefault();
             
             const itemInput = document.querySelector('#item');
             const quantidadeInput = document.querySelector('#quantidade');
             
+            if(!itemInput || !quantidadeInput) return;
+            
             const novoItem = itemInput.value;
             const novaQuantidade = parseInt(quantidadeInput.value);
             
-            // Criação de uma nova linha na tabela
             const tabela = document.querySelector('tbody');
             const novaLinha = document.createElement('tr');
             
             novaLinha.innerHTML = `
                 <td>${novoItem}</td>
                 <td>${novaQuantidade} kg</td>
-                <td><span class="status-ok">Estoque OK</span></td>
-                <td><button class="solicitar">Solicitar mais</button></td>
+                <td><span></span></td>
+                <td><button class="solicitar btn btn-sm btn-info text-white">Solicitar mais</button></td>
             `;
             
+            novaLinha.querySelector('.solicitar').addEventListener('click', () => alert('Você solicitou mais desse item!'));
             tabela.appendChild(novaLinha);
             itemInput.value = '';
             quantidadeInput.value = '';
             
-            // Atualiza o status de estoque após adicionar o item
-            atualizarStatus();
+            atualizarStatusEstoque();
         });
+    }
 
-        // Adicionar evento de clique nos botões de "Solicitar mais"
-        const solicitarButtons = document.querySelectorAll('.solicitar');
-        solicitarButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                alert('Você solicitou mais desse item!');
-            });
-        });
-
-        // Chama a função para atualizar o status quando a página for carregada
-        atualizarStatus();
+    const solicitarButtons = document.querySelectorAll('.solicitar');
+    solicitarButtons.forEach(button => {
+        button.className = "solicitar btn btn-sm btn-info text-white";
+        button.addEventListener('click', () => alert('Você solicitou mais desse item!'));
     });
 
+    atualizarStatusEstoque();
+}
 
+document.addEventListener("DOMContentLoaded", inicializarGerente);
